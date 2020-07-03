@@ -1,17 +1,10 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. Intégration du JS <!-- omit in toc -->
+# C. Serveur API REST <!-- omit in toc -->
 
-## Sommaire <!-- omit in toc -->
-- [B.1. Inclure le JS dans la page](#b1-inclure-le-js-dans-la-page)
-- [B.2. Tester la page](#b2-tester-la-page)
+***Durant les TPs nous aurons à connecter notre application React à une API REST fournie ici : https://framagit.org/formation/react/api-server***
 
-## A.3. Lancement de l'API REST
-
-Durant les TPs nous aurons à connecter notre application React à une API REST fournie ici : https://framagit.org/formation/react/api-server
-
-Ce serveur (basé sur [Express.js](http://expressjs.com/)) offre donc une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) générée à la volée.
-
+Ce serveur (basé sur [Express.js](http://expressjs.com/)) offre une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) générée à la volée.
 
 1. **Commencez par cloner le serveur :**
 	```bash
@@ -27,9 +20,9 @@ Ce serveur (basé sur [Express.js](http://expressjs.com/)) offre donc une API RE
 	```bash
 	npm install --global --production --verbose windows-build-tools
 	```
-	*Patientez 5 ~ 10 minutes que tout s'installe, fermez VSCodium, relancez le, puis retentez d'installer le serveur.*
+	*Patientez 5 ~ 10 minutes que tout s'installe, fermez vos terminaux ouverts (pour mettre à jour le PATH), relancez un terminal, puis retentez d'installer le serveur.*
 
-3. **Lancez ensuite le serveur à l'aide de la commande :**
+3. **Lancez le serveur à l'aide de la commande :**
 	```bash
 	npm start
 	```
@@ -42,4 +35,4 @@ Ce serveur (basé sur [Express.js](http://expressjs.com/)) offre donc une API RE
 	<a href="images/screen/screen-01.png"><img src="images/readme/screen-01.png" ></a>
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [D. Les devtools](D-devtools.md)
+Si tout fonctionne, vous pouvez passer à la dernière étape : [D. Les devtools](D-devtools.md)

@@ -3,11 +3,41 @@
 # B. Intégration du JS <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [B.1. Inclure le JS dans la page](#b1-inclure-le-js-dans-la-page)
+- [B.1. Lancement d'un serveur HTTP](#b1-lancement-dun-serveur-http)
+- [B.2. Inclure le JS dans la page](#b2-inclure-le-js-dans-la-page)
 - [B.2. Tester la page](#b2-tester-la-page)
 
-## B.1. Inclure le JS dans la page
-**Incluez le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`. (*Pour ouvrir le fichier dans vscodium, utilisez le raccourci* <kbd>CTRL</kbd>+<kbd>P</kbd> puis tapez simplement son nom)<br>
+***Maintenant que l'on a récupéré les fichiers du TP et que notre éditeur de code est prêt, lançons le projet pour voir à quoi ça ressemble !***
+
+## B.1. Lancement d'un serveur HTTP
+
+**Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (installé au point A.1.) et **`npx`** qui est un des 2 principaux utilitaires fournis avec Node ([npm (Node Package Manager)](https://fr.wikipedia.org/wiki/Npm) et [npx](https://www.npmjs.com/package/npx)).
+
+1. **Tout d'abord, ouvrez un terminal directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`).
+
+	Utiliser le terminal intégré à VSCodium a plusieurs avantages :
+	- pas besoin de jongler entre plusieurs fenêtres pour passer de l'IDE au terminal
+	- le terminal s'ouvre directement dans le dossier du projet
+
+2. **Dans ce terminal intégré, lancez un serveur http dans le dossier du TP** :
+	```bash
+	npx serve -l 8000
+	```
+
+	Node télécharge alors le paquet "serve" puis le lance dans le dossier tp0. Node se met ensuite en attente de connexions http et affiche quelque chose comme ceci :
+
+	<img src="images/readme/npx-serve.gif" />
+
+3. **Vérifiez dans votre navigateur que la page index.html** (fournie dans ce repo) **s'affiche correctement** en ouvrant l'url http://localhost:8000. Le résultat attendu est le suivant : <br><a href="images/readme/screen-00.png"><img src="images/readme/screen-00.png" ></a>
+
+	*Si la page ne s'affiche pas correctement, vérifiez que vous avez bien lancé votre serveur Node avec npx dans le bon dossier (c'est à dire celui où se trouve le fichier `index.html`).*
+
+## B.2. Inclure le JS dans la page
+Ce repo est fourni avec un fichier `src/main.js`.
+
+Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci* <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les fèches directionnelles et la touche `Entrée` pour valider.
+
+**Incluez ensuite le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`.
 
 Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans une page HTML :
 - **en "inline"** c'est à dire directement dans les attributs d'une balise. Dans l'exemple ci-dessous, le code JS s'exécutera lorsque l'utilisateur cliquera sur le lien :
@@ -49,4 +79,4 @@ Cette instruction `console.log()` permet d'afficher du texte ou des variables da
 **_Pour la suite du TP, tout le code se fera dans ce fichier `main.js`, le fichier html ne devra pas être modifié !_**
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [C. Les devtools](C-devtools.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [C. Serveur API REST](C-serveur-rest.md)
