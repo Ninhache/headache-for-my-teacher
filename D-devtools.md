@@ -1,17 +1,17 @@
 <img src="images/readme/header-small.jpg" >
 
-# C. les devtools <!-- omit in toc -->
+# D. les devtools <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [B.1. devtools : La console](#b1-devtools-la-console)
-- [B.2. devtools : l'inspecteur d'éléments](#b2-devtools-linspecteur-déléments)
-- [B.3. devtools : l'onglet Sources](#b3-devtools-longlet-sources)
+- [D.1. devtools : La console](#d1-devtools-la-console)
+- [D.2. devtools : l'inspecteur d'éléments](#d2-devtools-linspecteur-déléments)
+- [D.3. devtools : l'onglet Sources](#d3-devtools-longlet-sources)
 
 ***Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".***
 
 **Pendant les TP gardez <u>toujours</u> les outils de développement (et notamment la console) ouverts, ça vous sauvera la vie.**
 
-## B.1. devtools : La console
+## D.1. devtools : La console
 La console sert à afficher les instructions `console.log()` mais aussi les erreurs éventuelles dans votre code (vous me direz que ce n'est pas la peine, que vous ne faites jamais d'erreur, mais on sait tous les deux que c'est un mensonge, *"n'est-ce pas ?"*).
 
 <img src="images/readme/devtools-console.jpg" >
@@ -28,7 +28,7 @@ L'objet `console` est un objet global qui contient la méthode `.log()` mais aus
 
 Enfin, la console permet de tester rapidement du code JS grâce à un champ de saisie. Tapez-y l'instruction `42+"12"-10` puis tapez <kbd>Entrée</kbd>. Incroyable !
 
-## B.2. devtools : l'inspecteur d'éléments
+## D.2. devtools : l'inspecteur d'éléments
 
 L'inspecteur d'éléments permet de consulter ET de manipuler le code HTML et CSS de la page.
 
@@ -36,7 +36,7 @@ L'inspecteur d'éléments permet de consulter ET de manipuler le code HTML et CS
 
 Il sera utile pour vérifier que le code HTML que va générer votre JS correspond bien à ce qui est attendu.
 
-## B.3. devtools : l'onglet Sources
+## D.3. devtools : l'onglet Sources
 L'onglet sources permet d'inspecter le code JavaScript de la page, de placer des breakpoints et de stopper l'exécution du code quand une erreur survient. Quand l'exécution du JS est stoppée, on peut consulter les valeurs des variables locales et globales, de voir la call-stack, etc.
 
 C'est probablement l'onglet des devtools le plus important lorsqu'on développe en JavaScript.
