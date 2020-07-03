@@ -5,7 +5,7 @@
 ## Sommaire <!-- omit in toc -->
 - [B.1. Lancement d'un serveur HTTP](#b1-lancement-dun-serveur-http)
 - [B.2. Inclure le JS dans la page](#b2-inclure-le-js-dans-la-page)
-- [B.2. Tester la page](#b2-tester-la-page)
+- [B.3. Tester la page](#b3-tester-la-page)
 
 ***Maintenant que l'on a récupéré les fichiers du TP et que notre éditeur de code est prêt, lançons le projet pour voir à quoi ça ressemble !***
 
@@ -64,7 +64,7 @@ C'est cette dernière solution que je préconise car elle présente l'avantage d
 
 <a href="https://caniuse.com/#feat=script-defer"><img src="https://caniuse.bitsofco.de/static/v1/script-defer-1589742247382.webp" /></a>
 
-## B.2. Tester la page
+## B.3. Tester la page
 **Testez la page pour vérifier que le js est correctement chargé** : Ouvrez les outils de développement de votre navigateur (touche <kbd>F12</kbd> sur Chrome) et ouvrez le panneau "Console".
 
 Si le fichier `main.js` est correctement chargé, le texte `'welcome to REACTube !'` doit s'afficher dans la console. En effet, le fichier `main.js` contient l'instruction
