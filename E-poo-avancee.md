@@ -29,7 +29,7 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 	Testez votre classe avec le code suivant :
 	```js
 	const title = new Component( 'h1', null, ['Vos', ' ', 'recommandations'] );
-	document.querySelector('.appContainer > header').innerHTML = title.render();
+	document.querySelector('.container > header').innerHTML = title.render();
 	```
 
 2. **Adaptez la méthode `render()`** pour permettre de passer dans `children` non seulement des chaînes de caractères comme c'est déjà le cas mais aussi **d'autres `Component`**, comme ceci :
