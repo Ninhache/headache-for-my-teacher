@@ -149,6 +149,44 @@ Cette classe va nous permettre d'afficher plusieurs vignettes côte à côté gr
 	Le résultat attendu est le suivant :<br><a href="images/readme/screen-05.png"><img src="images/readme/screen-05.png" ></a>
 
 ## E.3. *Propriétés et méthodes statiques :* La classe PageRenderer
+
+Pour rappel les proriétés et méthodes statiques peuvent se déclarer à l'aide du mot clé `static`. Ces propriétés/méthodes sont définies et s'utilisent au niveau de la classe (et pas de l'instance) comme ceci :
+
+```js
+class Counter {
+    static counter = 0;
+    static getCounter() {
+        return this.counter++;
+    }
+}
+
+console.log(
+	Counter.getCounter(),   // 0
+	Counter.counter,        // 1
+	Counter.getCounter(),   // 1
+	Counter.counter,        // 2
+);
+```
+
+Dans cet exercice je vous propose aussi d'utiliser une syntaxe que l'on n'a pas encore abordé en cours qui est celle des **propriétés et méthodes privées**.
+
+Pour déclarer et utiliser des propriétés ou méthodes privées il suffit de les préfixer du caractère `'#'`comme ceci :
+
+```js
+class Animal {
+	name = 'unknown'; // propriété publique
+	#canFly = false; // propriété privée (#)
+	constructor(name) {
+		this.name = name;
+		this.#canFly = (name == 'Bran');
+	}
+}
+```
+
+Le support des propriétés et méthodes privées est en stage 3/4 de spécification. Ce n'est donc pas encore dans la spec EcmaScript officielle. Néanmoins il est possible de les utiliser grâce à au plugin Babel [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) que l'on a déjà installé précédemment (c'est le même que pour les propriétés publiques).
+
+Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete` comme dans d'autres langages, la réponse se trouve ici : https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x
+
 1. **Créez une classe `Page`** (dans un module `src/Page.js`)  :
 	- qui hérite de `Component`
 	- dont le constructeur reçoit comme paramètres: title (string), className (string) et children
