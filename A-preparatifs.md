@@ -16,14 +16,14 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	git clone https://framagit.org/formation/react/tp1.git ~/tps-react/tp1
 	```
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP précédent](../tp0/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
+2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP précédent](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp1
 	```
 
 ## A.2. Lancement du serveur HTTP
 
-Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](../tp0/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP dans un terminal intégré de VSCodium :
+Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](https://framagit.org/formation/react/tp0/-/blob/master/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP dans un terminal intégré de VSCodium :
 
 1. **Ouvrez un terminal intégré dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`).
 
