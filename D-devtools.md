@@ -7,21 +7,21 @@
 - [D.2. devtools : l'inspecteur d'éléments](#d2-devtools-linspecteur-déléments)
 - [D.3. devtools : l'onglet Sources](#d3-devtools-longlet-sources)
 
-***Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".***
+_**Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".**_
 
-**Pendant les TP gardez <u>toujours</u> les outils de développement (et notamment la console) ouverts, ça vous sauvera la vie.**
+**Pendant les TP gardez TOUJOURS les outils de développement (_et notamment la console_) ouverts, ça vous sauvera la vie.**
 
 ## D.1. devtools : La console
 La console sert à afficher les instructions `console.log()` mais aussi les erreurs éventuelles dans votre code (vous me direz que ce n'est pas la peine, que vous ne faites jamais d'erreur, mais on sait tous les deux que c'est un mensonge, *"n'est-ce pas ?"*).
 
 <img src="images/readme/devtools-console.jpg" >
 
-La méthode `console.log()` peut recevoir plusieurs paramètres, ils seront dans ce cas affichés les un après les autres, séparés par un espace. Remplacer le `console.log(...);` du `main.js` par :
+La méthode `console.log()` peut recevoir plusieurs paramètres, ils seront dans ce cas affichés les un après les autres, séparés par un espace. Remplacez le `console.log(...);` du `main.js` par :
 ```js
 console.log('Welcome to ', {title:'REACTube', emoji: '📺'});
 ```
 
-L'objet `console` est un objet global qui contient la méthode `.log()` mais aussi d'autres méthodes qui permettent d'avoir un rendu différent et de filtrer les messages. Essayez les méthodes suivantes et constatez le résultat dans la console :
+En fait l'objet `console` est un objet global qui contient la méthode `.log()` mais aussi d'autres méthodes qui permettent d'avoir un rendu différent et de filtrer les messages. Essayez les méthodes suivantes et constatez le résultat dans la console :
 - console.warn()
 - console.error()
 - console.clear()
@@ -54,4 +54,4 @@ Une fois la page rechargée, l'exécution est interrompue, et il est possible de
 
 Pour reprendre l'exécution de la page, cliquez sur le bouton play bleu, puis re-cliquez sur le numéro de la 2e ligne pour enlever le breakpoint.
 
-***ça y est, c'est terminé ! <br>Félicitations, vous êtes maintenant prêt.e à démarrer la formation React !***
+_**Ça y est, c'est terminé ! <br>Félicitations, vous êtes maintenant prêt.e à démarrer la formation React !**_

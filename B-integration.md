@@ -11,7 +11,8 @@
 
 ## B.1. Lancement d'un serveur HTTP
 
-**Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (installé au point A.1.) et **`npx`** qui est un des 2 principaux utilitaires fournis avec Node ([npm (Node Package Manager)](https://fr.wikipedia.org/wiki/Npm) et [npx](https://www.npmjs.com/package/npx)).
+**Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>
+On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (installé au point A.1.) et **[npx](https://www.npmjs.com/package/npx)** qui est un des 2 principaux utilitaires fournis automatiquement avec Node (l'autre étant [npm : Node Package Manager](https://fr.wikipedia.org/wiki/Npm)).
 
 1. **Tout d'abord, ouvrez un terminal directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`).
 
@@ -24,7 +25,7 @@
 	npx serve -l 8000
 	```
 
-	Node télécharge alors le paquet "serve" puis le lance dans le dossier tp0. Node se met ensuite en attente de connexions http et affiche quelque chose comme ceci :
+	Node télécharge alors le paquet "serve" puis le lance dans le dossier `tp0`. Node se met ensuite en attente de connexions http et affiche quelque chose comme ceci :
 
 	<img src="images/readme/npx-serve.gif" />
 
@@ -33,26 +34,26 @@
 	*Si la page ne s'affiche pas correctement, vérifiez que vous avez bien lancé votre serveur Node avec npx dans le bon dossier (c'est à dire celui où se trouve le fichier `index.html`).*
 
 ## B.2. Inclure le JS dans la page
-Ce repo est fourni avec un fichier `src/main.js`.
+**Ce repo est fourni avec un fichier `src/main.js` qu'il va falloir intégrer dans la page html.**
 
-Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci* <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les fèches directionnelles et la touche `Entrée` pour valider.
+Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci* <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
 
 **Incluez ensuite le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`.
 
 Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans une page HTML :
 - **en "inline"** c'est à dire directement dans les attributs d'une balise. Dans l'exemple ci-dessous, le code JS s'exécutera lorsque l'utilisateur cliquera sur le lien :
 	```html
-	<a href="#" onclick="alert('Welcome to Westeros');return false;">
-		GOT
+	<a href="#" onclick="alert('Welcome to Albuquerque');return false;">
+		BB
 	</a>
 	```
 - **dans une balise `<script>`.** Le code s'exécute alors au chargement de la page, au moment où le navigateur arrive à cette ligne (le navigateur parse le document html de haut en bas):
 	```html
-	<script>alert('Bienvenue à Westeros');</script>
+	<script>alert('Welcome to Albuquerque');</script>
 	```
 - **dans une balise `<script>` avec un attribut `src`**. Dans ce cas le code JS peut alors être externalisé dans un fichier distinct. Le code s'exécute lorsque le fichier est chargé :
 	```html
-	<script src="westeros.js"></script>
+	<script src="welcome.js"></script>
 	```
 **C'est cette dernière technique que nous emploierons car elle permet de bien séparer les responsabilités de notre appli** (*HTML et JS séparés*).
 
@@ -62,7 +63,7 @@ Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans u
 
 C'est cette dernière solution que je préconise car elle présente l'avantage de ne pas mélanger le contenu du document (le `<body>`) avec des informations annexes comme le chargement de scripts JS (qui relèvent plutôt du `<head>`) par ailleurs le support navigateur est très bon (IE10, Android 3+, iOS 5+, etc.)
 
-<a href="https://caniuse.com/#feat=script-defer"><img src="https://caniuse.bitsofco.de/static/v1/script-defer-1589742247382.webp" /></a>
+<a href="https://caniuse.com/#feat=script-defer"><img src="https://caniuse.bitsofco.de/image/script-defer.webp" /></a>
 
 ## B.3. Tester la page
 **Testez la page pour vérifier que le js est correctement chargé** : Ouvrez les outils de développement de votre navigateur (touche <kbd>F12</kbd> sur Chrome) et ouvrez le panneau "Console".
