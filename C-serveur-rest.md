@@ -29,6 +29,9 @@ Ce serveur (basé sur [Express.js](http://expressjs.com/)) offre une API REST mi
 	```bash
 	npm start
 	```
+
+	<img src="images/readme/npm-start.gif" />
+
 	_**NB :** attention de bien lancer cette commande dans le dossier `api-server`_
 
 4. **Vérifiez que la base de données SQLite a bien été créée** en vérifiant qu'un fichier `server/db.sqlite` figure bien maintenant dans le projet.
