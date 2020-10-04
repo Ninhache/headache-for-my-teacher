@@ -70,6 +70,9 @@ L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni 
 	```bash
 	./node_modules/.bin/babel src -d build
 	```
+
+	<img src="images/readme/babel-build.gif" />
+
 	Cette commande va créer un dossier `build` dans lequel sera placé le fichier `main.js` compilé !
 
 	Vérifiez que le fichier `build/main.js` est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas (s'il reste des `const`, des template strings ou des arrow functions), c'est que le `.babelrc` est mal configuré ou que vous avez raté une étape !
