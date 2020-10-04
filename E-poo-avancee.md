@@ -173,12 +173,12 @@ Dans cet exercice je vous propose aussi d'utiliser une syntaxe que l'on n'a pas 
 Pour déclarer et utiliser des propriétés ou méthodes privées il suffit de les préfixer du caractère `'#'`comme ceci :
 
 ```js
-class Animal {
-	name = 'unknown'; // propriété publique
-	#canFly = false; // propriété privée (#)
-	constructor(name) {
-		this.name = name;
-		this.#canFly = (name == 'Bran');
+class Character {
+	firstname;
+	#canCook = false; // propriété privée (#)
+	constructor(firstname) {
+		this.firstname = firstname;
+		this.#canCook = (firstname === 'Walter');
 	}
 }
 ```
@@ -207,6 +207,24 @@ Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete`
 
 
 ## E.4. *Setter & Getter :* La propriété `videos`
+
+Vous pouvez déclarer des getter et des setters de la forme suivante :
+
+```js
+class Character {
+	firstname;
+	set firstname(value) {
+		console.log(value);
+		this.firstname = value.toLowerCase();
+	}
+}
+```
+
+Ce sont en fait des méthodes qui se "déguisent" en propriétés. Pour utiliser le setter écrit au dessus, on peut faire simplement :
+```js
+heisenberg.firstname = 'Walter';
+```
+On a l'impression d'utiliser une propriété, mais en réalité c'est une méthode qui est déclenchée, et donc le `console.log(value)` va s'exécuter.
 
 A l'aide des propriétés privées, des getters et des setters, faire en sorte que le code suivant permette d'afficher la liste des vidéos :
 ```js

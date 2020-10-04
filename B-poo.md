@@ -18,50 +18,52 @@ Mais pour le moment on va simplifier la mise en place en remettant ça à plus t
 
 ## B.1. Rappels de syntaxe
 ### B.1.1. class & propriétés publiques
-Comme vu dans le cours (*procurez vous le support pdf sur moodle !*) ES6 a introduit une nouvelle syntaxe pour la création de classes. Finis les `prototypes`, désormais le mot clé `class` fait son apparition et permet une d'utiliser syntaxe plus proche de ce qui se fait dans les autres langages objets :
+Comme vu dans le cours (*procurez vous le support pdf !*) ES6 a introduit une nouvelle syntaxe pour la création de classes. Finis les `prototypes`, désormais le mot clé `class` fait son apparition et permet une d'utiliser syntaxe plus proche de ce qui se fait dans les autres langages objets :
 ```js
-class Animal {
-	constructor( name ){
-		this.name = name;
+class Character {
+	constructor(firstname) { // constructeur de la classe
+		this.firstname = firstname; // création de propriété
 	}
 }
-const threeEyedRaven = new Animal( 'Bran' );
+const heisenberg = new Character('Walter');
 ```
-La création de propriétés d'instances se fait par l'utilisation du mot clé `this` dans le constructeur : `this.name = name;` permet de créer une propriété `name` sur l'instance en cours de création et de lui assigner la valeur passée au constructeur via l'instruction `new Animal( 'Bran' );`.
+La création de propriétés d'instances se fait par l'utilisation du mot clé `this` dans le constructeur : `this.firstname = firstname;` permet de créer une propriété `name` sur l'instance en cours de création et de lui assigner la valeur passée au constructeur via l'instruction `new Character('Walter');`.
 
 On peut ensuite accéder aux propriétés de l'objet en utilisant la notation pointée :
 ```js
-console.log( threeEyedRaven.name );
+console.log( heisenberg.firstname );
 ```
 Il est possible également de déclarer les propriétés d'instance en dehors du constructeur de cette manière :
 ```js
-class Animal {
-	name;
-	constructor( name ){
-		this.name = name;
+class Character {
+	firstname;
+	constructor(firstname) {
+		this.firstname = firstname;
 	}
 }
 ```
-Attention cependant, cette notation n'est pas encore dans la spec officielle d'EcmaScript (la spec suivie par JavaScript) mais a des chances d'être intégrée dans la version 2020 d'EcmaScript (ES11) : cf. https://github.com/tc39/proposal-class-fields et https://tc39.github.io/proposal-class-fields/
+Attention cependant, cette notation n'est pas encore dans la spec officielle d'EcmaScript (la spec suivie par JavaScript) mais a des chances d'être intégrée dans la version 2021 d'EcmaScript (ES12) : cf. https://github.com/tc39/proposal-class-fields et https://tc39.github.io/proposal-class-fields/
 
 Pour pouvoir l'utiliser avec Babel, il faudra modifier légèrement la configuration de Babel (cf. chapitre suivant).
 
 ### B.1.2. méthodes
 La création de méthodes d'une classe se fait de la manière suivante :
 ```js
-class Animal {
-	constructor( name ){
-		this.name = name;
+class Character {
+	firstname;
+	lastname;
+	constructor(firstname, lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
 	}
-	fly() { // déclaration de méthode
-		console.log(`${this.name} is flying !`);
+	fullname(){ // déclaration de méthode
+		return `${this.firstname} ${this.lastname}`;
 	}
 }
-const threeEyedRaven = new Animal( 'Bran' );
 ```
 Pour appeler la méthode, on utilise simplement la notation pointée :
 ```js
-threeEyedRaven.fly();
+heisenberg.fullname();
 ```
 
 ## B.2. La classe Component
@@ -79,7 +81,7 @@ threeEyedRaven.fly();
 	const title = new Component( 'h1' );
 	document.querySelector('.container > header').innerHTML = title.render();
 	```
-	+ **le constructeur** prend en paramètre une chaîne nommée `tag` pour le moment simplement sauvegardé dans une propriété de l'instance: `this.tag`
+	+ **le constructeur** prend en paramètre une chaîne nommée `tag` pour le moment simplement sauvegardée dans une propriété de l'instance: `this.tag`
 	+ **la classe dispose d'une méthode `render()`**.
 
   		Cette méthode retourne une chaîne de caractères au format html qui correspond à une balise dont le type dépend de l'attribut `tag` passé au constructeur.
@@ -95,7 +97,7 @@ threeEyedRaven.fly();
 
 	**Vérifiez que votre classe fonctionne correctement en inspectant le code généré par votre application avec l'Inspecteur d'éléments des devtools du navigateur.**
 
-	***NB :** Utilisez les template strings pour cette méthode et pensez à passer des lignes dans la chaîne de caractères pour rendre votre code plus lisible.*
+	_**NB :** Utilisez les template strings pour cette méthode et pensez à passer des lignes dans la chaîne de caractères pour rendre votre code plus lisible._
 
 4. **Ajoutez un second paramètre au constructeur, nommé `children`.** Modifiez le code de la méthode render() de manière à ce que le code suivant :
     ```js
@@ -113,23 +115,23 @@ threeEyedRaven.fly();
 	```js
 	const img = new Component( 'img' );
 	```
-	`render()` doit retourner `<img />` et pas `<img></img>` (*car ce n'est pas un code HTML valide selon la spec du W3C*).
+	`render()` doit retourner `<img />` et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
 
 	**Testez votre classe comme ceci** :
 	```js
 	const img = new Component( 'img' );
 	document.querySelector( '.videoList' ).innerHTML = img.render();
 	```
-	Vérifiez dans l'inspecteur d'éléments que votre image est bien ajoutée dans `videoList`. (*NB. Visuellement, difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !*)
+	Vérifiez dans l'inspecteur d'éléments que votre image est bien ajoutée dans `videoList`. (_NB. Visuellement, difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_)
 
 6. **Ajoutez un paramètre `attribute` en 2e position du constructeur de la classe `Component`  : enregistrez ce paramètre dans une propriété d'instance `this.attribute`.**
 
 	La signature du constructeur sera désormais :
 	```js
-	constructor( tagName, attribute, children ) {
+	constructor( tag, attribute, children ) {
 	```
 
-	**Modifiez la méthode `render()` pour prendre en compte le paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. Si le paramètre `attribute` a été fourni au constructeur comme ceci :
+	**Modifiez la méthode `render()` pour prendre en compte le paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est à dire que si le paramètre `attribute` a été fourni au constructeur comme ceci :
 
 	```js
 	const img = new Component( 'img', {name:'src', value:'https://source.unsplash.com/wOHH-NUTvVc/600x340'} );
@@ -139,7 +141,7 @@ threeEyedRaven.fly();
 	```html
 	<img src="https://source.unsplash.com/wOHH-NUTvVc/600x340" />
 	```
-	*Pour ne pas alourdir trop le code de la méthode render() je vous recommande de créer une nouvelle méthode `renderAttribute()` -appelée dans la méthode `render()`- qui va être en charge du rendu de l'attribut html.*
+	_Pour ne pas alourdir trop le code de la méthode render() je vous recommande de créer une nouvelle méthode `renderAttribute()` -appelée dans la méthode `render()`- qui va être en charge du rendu de l'attribut html._
 
 	Testez ce nouveau code, le rendu devra cette fois être :<br><a href="images/readme/screen-02.png"><img src="images/readme/screen-02.png" ></a>
 
