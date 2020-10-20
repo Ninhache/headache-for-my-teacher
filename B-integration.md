@@ -36,7 +36,7 @@ On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, to
 ## B.2. Inclure le JS dans la page
 **Ce repo est fourni avec un fichier `src/main.js` qu'il va falloir intégrer dans la page html.**
 
-Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci* <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
+Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
 
 **Incluez ensuite le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`.
 
@@ -75,7 +75,9 @@ console.log('Welcome to REACTube !');
 
 Cette instruction `console.log()` permet d'afficher du texte ou des variables dans la console.
 
-**NB :** _Si le texte ne s'affiche pas, c'est probablement que le fichier `main.js` n'est pas correctement intégré dans la page html. <br>Ouvrez le panneau "Network"/"Réseau" des devtools puis rechargez la page en désactivant le cache navigateur : touche <kbd>CTRL</kbd>+<kbd>F5</kbd>, ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>R</kbd> selon les navigateurs. Assurez-vous que cette fois le fichier `main.js` figure bien dans la liste des fichiers téléchargés. Si ce n'est toujours pas le cas, c'est que votre balise `<script>` n'est pas correcte (vérifiez le chemin vers le fichier)._
+> _**NB :** Si le texte ne s'affiche pas, c'est probablement que le fichier `main.js` n'est pas correctement intégré dans la page html :_
+>
+> _Ouvrez le panneau "Network"/"Réseau" des devtools puis rechargez la page en désactivant le cache navigateur : touche <kbd>CTRL</kbd>+<kbd>F5</kbd>, ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>R</kbd> selon les navigateurs. Assurez-vous que cette fois le fichier `main.js` figure bien dans la liste des fichiers téléchargés. Si ce n'est toujours pas le cas, c'est que votre balise `<script>` n'est pas correcte (vérifiez le chemin vers le fichier)._
 
 **_Pour la suite du TP, tout le code se fera dans ce fichier `main.js`, le fichier html ne devra pas être modifié !_**
 
