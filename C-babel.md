@@ -7,14 +7,14 @@
 - [C.2. Compilation](#c2-compilation)
 - [C.3. Créer un script de build personnalisé](#c3-créer-un-script-de-build-personnalisé)
 
-***Jusque là on ne s'est pas préoccupé de la compatibilité navigateur du code que l'on a tapé.***
+_**Jusque là on ne s'est pas préoccupé de la compatibilité navigateur du code que l'on a tapé.**_
 
 En revanche dans la vraie vie, si l'on veut que tous les internautes puissent utiliser notre application sans encombre, **il faut compiler notre code ES6+ en ES5**. Cette compilation se fait avec [Babel](https://babeljs.io).
 
 ## C.1. Installation et configuration
 L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni avec Node et qui permet de télécharger des utilitaires JS).
 
-1. **Tout d'abord, ouvrez un nouveau terminal intégré dans VSCodium** (*vous en avez normalement déjà un qui exécute le serveur http `npx serve -l 8000`*).
+1. **Tout d'abord, ouvrez un nouveau terminal intégré dans VSCodium** (_vous en avez normalement déjà un qui exécute le serveur http `npx serve -l 8000`_).
 
 	Je vous recommande d'utiliser ici [un terminal splitté](https://code.visualstudio.com/docs/editor/integrated-terminal#_terminal-splitting) pour afficher deux terminaux côte à côté. : Tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis **`Terminal: split terminal`** ou cliquez sur l'icône suivante :
 
@@ -32,7 +32,7 @@ L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni 
 	```bash
 	npm install --save-dev @babel/core @babel/cli
 	```
-	Ouvrez le fichier `package.json`dans VSCodium (<kbd>CTRL</kbd>+<kbd>P</kbd>). Vous noterez que les paquets `@babel/core` et `@babel/cli` ont été rajoutés dans les dépendances du projet !
+	Ouvrez le fichier `package.json` dans VSCodium (<kbd>CTRL</kbd>+<kbd>P</kbd>). Vous noterez que les paquets `@babel/core` et `@babel/cli` ont été rajoutés dans les dépendances du projet !
 
 	Vous pourrez aussi remarquer qu'un dossier `node_modules` a également été créé. C'est lui qui contient le code de toutes les dépendances du projet (toutes les librairies js qu'on a installé avec npm).
 
@@ -63,10 +63,10 @@ L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni 
 		"plugins": ["@babel/plugin-proposal-class-properties"]
 	}
 	```
-	**NB :** le nom du fichier est bien `.babelrc`. Si vous êtes sous windows vous ne pourrez pas créer ce fichier avec l'explorateur de fichiers (_windows vous oblige à choisir un nom de fichier de la forme `nom-du-fichier.extension`_) utilisez donc VSCodium pour ça : <kbd>CTRL</kbd>+<kbd>N</kbd> puis <kbd>CTRL</kbd>+<kbd>S</kbd>
+	> _**NB :** le nom du fichier à créer est bien **`.babelrc`**. Si vous êtes sous windows vous ne pourrez pas créer ce fichier avec l'explorateur de fichiers (windows vous oblige à choisir un nom de fichier de la forme `nom-du-fichier.extension`) utilisez donc VSCodium pour ça : <kbd>CTRL</kbd>+<kbd>N</kbd> puis <kbd>CTRL</kbd>+<kbd>S</kbd>_
 
 ## C.2. Compilation
-6. **Vous pouvez maintenant compiler votre code ES6+ en ES5 à l'aide de la commande** :
+1. **Vous pouvez maintenant compiler votre code ES6+ en ES5 à l'aide de la commande** :
 	```bash
 	./node_modules/.bin/babel src -d build
 	```
@@ -77,7 +77,7 @@ L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni 
 
 	Vérifiez que le fichier `build/main.js` est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas (s'il reste des `const`, des template strings ou des arrow functions), c'est que le `.babelrc` est mal configuré ou que vous avez raté une étape !
 
-7. **Une fois le fichier `build/main.js` créé, modifiez le fichier `index.html` pour charger ce fichier à la place du `src/main.js`.** Rechargez la page pour vérifier que tout fonctionne toujours correctement !
+2. **Une fois le fichier `build/main.js` créé, modifiez le fichier `index.html` pour charger ce fichier à la place du `src/main.js`.** Rechargez la page pour vérifier que tout fonctionne toujours correctement !
 
 ## C.3. Créer un script de build personnalisé
 Jusque là pour lancer la compilation avec [Babel](https://babeljs.io), nous lancions la commande suivante :
@@ -95,15 +95,15 @@ Avec le `package.json` **on va créer un "raccourci" pour lancer cette commande 
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	```
-4. **Cette section permet d'indiquer des tâches qui pourront être lancées à l'aide de la commande `npm run <nom-du-script>`.** Par défaut le `package.json` contient une tâche `"test"`. Lancez le script `"test"` en tapant :
+4. **Cette section permet d'indiquer des tâches qui pourront être lancées à l'aide de la commande `npm run <nom-du-script>`.** Par défaut le `package.json` contient une tâche `"test"`. Lancez donc ce script `"test"` en tapant :
 	```bash
 	npm run test
 	```
-	Vous verrez la commande `"echo \"Error: no test specified\" && exit 1"` s'exécuter dans le terminal.<br>
+	Vous verrez la commande `"echo \"Error: no test specified\" && exit 1"` s'exécuter dans le terminal :
 
 	<img src="images/readme/npm-run-test.gif" />
 
-	`"test"` est donc une sorte d'alias, de **"raccourci"**, permettant de lancer une commande plus complexe.
+	`"test"` est donc une sorte d'**alias**, de **"raccourci"**, permettant de lancer une commande plus complexe.
 5. **Ajoutez maintenant dans le `package.json` un nouveau script qu'on appellera "build"** et qui permettra de lancer la compilation Babel :
 	```json
 	"scripts": {
@@ -111,15 +111,15 @@ Avec le `package.json` **on va créer un "raccourci" pour lancer cette commande 
 		"build": "babel src -d build"
 	},
 	```
-	*Vous noterez que le chemin  `./node_modules/.bin/' n'est maintenant plus nécessaire !*
+	> _**NB :** Vous noterez que le chemin `./node_modules/.bin/' que l'on utilisait jusque là dans notre commande de compilation n'est ici plus nécessaire !_
 
 6. **Lancez la commande `npm run build`** et constatez avec émerveillement que la compilation babel se lance !
 
 	<img src="images/readme/npm-run-build.gif" />
 
-	*Si la compilation ne se lance pas, plusieurs raisons possibles :*
-	- *soit Babel n'est pas correctement installé,*
-	- *soit la section "scripts" n'est pas correctement formatée (pensez qu'il s'agit d'un fichier JSON, par conséquent l'oubli d'une virgule entre chaque script ou au contraire l'ajout d'une virgule à la fin du dernier script, sont considérés comme des erreurs de syntaxe).*
+	> _**NB :** Si la compilation ne se lance pas, plusieurs raisons sont possibles :_
+	> - _soit Babel n'est pas correctement installé,_
+	> - _soit la section "scripts" n'est pas correctement formatée (pensez qu'il s'agit d'un fichier JSON, par conséquent l'oubli d'une **virgule** entre chaque script ou au contraire l'ajout d'une virgule à la fin du dernier script, sont considérés comme des **erreurs** de syntaxe)._
 7. **Ajoutez un nouveau script nommé `"watch"`** qui permettra de lancer la commande :
 	```bash
 	./node_modules/.bin/babel src -d build --verbose --watch --source-maps
@@ -128,7 +128,7 @@ Avec le `package.json` **on va créer un "raccourci" pour lancer cette commande 
 
 	<img src="images/readme/npm-run-watch.gif" />
 
-	_Vous voyez que le watch ne vous rend pas la main sur le terminal, il faut le laisser ouvert pour que la recompilation automatique à chaque sauvegarde continue de fonctionner._
+	Vous voyez que le watch ne vous rend pas la main sur le terminal, il faut le laisser ouvert pour que la recompilation automatique à chaque sauvegarde continue de fonctionner.
 
 ## Étape suivante <!-- omit in toc -->
 Maintenant que votre code compile, vous pouvez passer à l'étape suivante : [D. Les modules](./D-modules.md)

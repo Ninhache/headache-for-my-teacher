@@ -1,30 +1,30 @@
 <img src="images/readme/header-small.jpg" >
 
-# E. Pour aller plus loin : POO avancée <!-- omit in toc -->
+# E. POO avancée <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [E.1. *Composition :* La classe VideoItem](#e1-composition-la-classe-videoitem)
-- [E.2. *Composition :* La classe VideoList](#e2-composition-la-classe-videolist)
-- [E.3. *Propriétés et méthodes statiques :* La classe PageRenderer](#e3-propriétés-et-méthodes-statiques-la-classe-pagerenderer)
-- [E.4. *Setter & Getter :* La propriété `videos`](#e4-setter-getter-la-propriété-videos)
+- [E.1. _Composition :_ La classe VideoItem](#e1-composition-la-classe-videoitem)
+- [E.2. _Composition :_ La classe VideoList](#e2-composition-la-classe-videolist)
+- [E.3. _Propriétés et méthodes statiques :_ La classe PageRenderer](#e3-propriétés-et-méthodes-statiques-la-classe-pagerenderer)
+- [E.4. _Setter & Getter :_ La propriété `videos`](#e4-setter-getter-la-propriété-videos)
 
-***Si vous êtes arrivé à cette partie du TP bravo* ! 🎉🥂😎 *Vous avez terminé les exercices de base du TP !***
+_**Si vous êtes arrivé à cette partie du TP bravo ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
 
 Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtrise de la POO en JS et notamment de travailler sur les concepts de composition, sur les méthodes et propriétés privées, statiques, et sur les méthodes get/set.
 
 **C'est parti !**
 
-## E.1. *Composition :* La classe VideoItem
+## E.1. _Composition :_ La classe VideoItem
 
-***L'objectif de cet exercice est d'utiliser une classe à l'intérieur d'une autre. On va se servir de la classe `Img` développée précédemment à l'intérieur d'un nouveau composant : `VideoItem`.***
+_**L'objectif de cet exercice est d'utiliser une classe à l'intérieur d'une autre. On va se servir de la classe `Img` développée précédemment à l'intérieur d'un nouveau composant : `VideoItem`.**_
 
 1. **Modifiez le code de la méthode `render()`** de la classe `Component` pour lui permettre de recevoir dans le paramètre `children` :
 	- soit une **chaîne de caractères** (comme c'est déjà le cas actuellement)
 	- soit un **tableau de chaînes de caractères.** <br>Par exemple : si `tag` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `render()` retournera la chaîne `"<div>youpiçamarche</div>"`.
 
-	***NB :** Pour ne pas alourdir trop le code de la méthode `render()` et pour avoir un code plus lisible, passez le code de rendu des enfants, dans une méthode `renderChildren()`.*
+	> _**NB :** Pour ne pas alourdir trop le code de la méthode `render()` et pour avoir un code plus lisible, passez le code de rendu des enfants, dans une méthode `renderChildren()`._
 
-	Pour tester si `children` est un tableau (classe `Array`), vous pouvez utiliser l'opérateur `instanceof` cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof
+	> _**NB2 :** Pour tester si `children` est un tableau (classe `Array`), vous pouvez utiliser l'opérateur `instanceof` cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof_
 
 	Testez votre classe avec le code suivant :
 	```js
@@ -48,9 +48,11 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 	- si cet enfant est lui-même une instance de Component, on fait alors appel à la méthode `render()` du `Component` enfant (petit indice : ça ressemble quand même beaucoup au concept de "récursivité"...)
 	- si l'enfant est une chaîne de caractères, alors la chaîne est ajoutée telle qu'elle, comme auparavant
 
-	Pour tester si un enfant est de la classe `Component`, vous pouvez là aussi utiliser l'opérateur `instanceof` cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof
+	> **NB :** Pour tester si un enfant est de la classe `Component`, vous pouvez là aussi utiliser l'opérateur [`instanceof`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof)_
 
-	Si votre code fonctionne correctement, vous devez avoir le rendu suivant :<br><a href="images/readme/screen-03.png"><img src="images/readme/screen-03.png" ></a>
+	Si votre code fonctionne correctement, vous devez avoir le rendu suivant :
+
+	<img src="images/readme/screen-03.png" >
 
 3. **Créez une classe `VideoItem`** (dans `src/VideoItem.js`) qui hérite de la classe `Component` et qui utilise **obligatoirement** la classe **`Img`** pour rendre son code HTML.
 
@@ -77,13 +79,13 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 	```
 	... et le rendu obtenu dans la page sera celui-ci :
 
-	<a href="images/readme/screen-04.png"><img src="images/readme/screen-04.png" ></a>
+	<img src="images/readme/screen-04.png" >
 
-## E.2. *Composition :* La classe VideoList
+## E.2. _Composition :_ La classe VideoList
 
-***Après un exemple simple de composition, attaquons nous à un cas plus complexe : celui de la `VideoList`.***
+_**Après un exemple simple de composition, attaquons nous à un cas plus complexe : celui de la `VideoList`.**_
 
-Cette classe va nous permettre d'afficher plusieurs vignettes côte à côté grâce au composant `VideoItem` créé précédemment.
+Cette classe va nous permettre d'afficher plusieurs vignettes côte à côte grâce au composant `VideoItem` créé précédemment.
 
 1. **Créez un module `src/data.js` dans lequel vous exporterez le tableau suivant :**
 	```js
@@ -133,7 +135,8 @@ Cette classe va nous permettre d'afficher plusieurs vignettes côte à côté gr
 	]
 	```
 2. **Dans le fichier `index.html`, changez le nom de la classe CSS de la balise `<div class="videoList">` en `<div class="page">`**. C'est la `VideoList` qui sera chargée de créer, à l'intérieur de `<div class="page">`, la `<div class="videoList">`.
-2. **Créez enfin la classe `VideoList` dans le fichier `src/VideoList.js` ** :
+
+3. **Créez enfin la classe `VideoList` dans le fichier `src/VideoList.js`** :
 	- cette classe hérite de `Component`
 	- instanciez la dans `src/main.js` comme ceci :
 		```js
@@ -144,13 +147,15 @@ Cette classe va nous permettre d'afficher plusieurs vignettes côte à côté gr
 	-  pour chaque cellule du tableau `data`, le composant `VideoList` créera un composant `VideoItem` associé
 	-  le code HTML retourné par la méthode `render()` sera une balise `<div class="videoList">` dans laquelle sera injectée la combinaison du `render()` de chaque `VideoItem`
 
-	***NB:** en théorie, un simple override du constructor et l'utilisation de la méthode [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map) doivent suffire !*
+	> _**NB :** en théorie, un simple override du constructor et l'utilisation de la méthode [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map) doivent suffire !_
 
-	Le résultat attendu est le suivant :<br><a href="images/readme/screen-05.png"><img src="images/readme/screen-05.png" ></a>
+	Le résultat attendu est le suivant :
 
-## E.3. *Propriétés et méthodes statiques :* La classe PageRenderer
+	<img src="images/readme/screen-05.png" >
 
-Pour rappel les proriétés et méthodes statiques peuvent se déclarer à l'aide du mot clé `static`. Ces propriétés/méthodes sont définies et s'utilisent au niveau de la classe (et pas de l'instance) comme ceci :
+## E.3. _Propriétés et méthodes statiques :_ La classe PageRenderer
+
+Pour rappel les propriétés et méthodes statiques peuvent se déclarer à l'aide du mot clé `static`. Ces propriétés/méthodes sont définies et s'utilisent au niveau de la classe (et pas de l'instance) comme ceci :
 
 ```js
 class Counter {
@@ -174,18 +179,18 @@ Pour déclarer et utiliser des propriétés ou méthodes privées il suffit de l
 
 ```js
 class Character {
-	firstname;
+	firstName;
 	#canCook = false; // propriété privée (#)
-	constructor(firstname) {
-		this.firstname = firstname;
-		this.#canCook = (firstname === 'Walter');
+	constructor(firstName) {
+		this.firstName = firstName;
+		this.#canCook = (firstName === 'Walter');
 	}
 }
 ```
 
 Le support des propriétés et méthodes privées est en stage 3/4 de spécification. Ce n'est donc pas encore dans la spec EcmaScript officielle. Néanmoins il est possible de les utiliser grâce à au plugin Babel [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) que l'on a déjà installé précédemment (c'est le même que pour les propriétés publiques).
 
-Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete` comme dans d'autres langages, la réponse se trouve ici : https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x
+> _**NB :** Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete` comme dans d'autres langages, la réponse se trouve ici :_ https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x
 
 1. **Créez une classe `Page`** (dans un module `src/Page.js`)  :
 	- qui hérite de `Component`
@@ -206,23 +211,23 @@ Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete`
 5. **Affichez enfin la `VideoList` grâce à la classe `PageRenderer`**
 
 
-## E.4. *Setter & Getter :* La propriété `videos`
+## E.4. _Setter & Getter :_ La propriété `videos`
 
 Vous pouvez déclarer des getter et des setters de la forme suivante :
 
 ```js
 class Character {
-	firstname;
-	set firstname(value) {
+	#firstName;
+	set firstName(value) {
 		console.log(value);
-		this.firstname = value.toLowerCase();
+		this.#firstName = value.toLowerCase();
 	}
 }
 ```
 
 Ce sont en fait des méthodes qui se "déguisent" en propriétés. Pour utiliser le setter écrit au dessus, on peut faire simplement :
 ```js
-heisenberg.firstname = 'Walter';
+heisenberg.firstName = 'Walter';
 ```
 On a l'impression d'utiliser une propriété, mais en réalité c'est une méthode qui est déclenchée, et donc le `console.log(value)` va s'exécuter.
 

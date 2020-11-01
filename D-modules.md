@@ -7,7 +7,6 @@
 - [D.2. Support natif dans les navigateurs modernes](#d2-support-natif-dans-les-navigateurs-modernes)
 - [D.3. Rendre les modules compatibles avec les vieux navigateurs](#d3-rendre-les-modules-compatibles-avec-les-vieux-navigateurs)
 - [D.4. mode dev vs mode prod](#d4-mode-dev-vs-mode-prod)
-- [Étape suivante](#étape-suivante)
 
 ## D.1. Rappels
 **Comme vu en cours, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier** (*plutôt que d'avoir à maintenir une longue liste de balises `<script>` dans le fichier html*).
@@ -39,11 +38,12 @@ Dans un premier temps nous ferons abstraction de ces questions de compatibilité
 Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec les vieux navigateurs grâce à Webpack.
 
 ## D.2. Support natif dans les navigateurs modernes
-1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `main.js` est lui-même un module.** Pour cela, ajouter un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
+1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
 	```html
 	<script type="module" src="build/main.js"></script>
 	```
-	Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !
+	> _**NB :** Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
+
 2. **Il faut ensuite configurer Babel.** En effet, par défaut Babel va chercher à compiler toutes les instructions `import` et `export` qu'il trouvera pour les transformer en code compatible ES5. Ici on veut utiliser le support natif du navigateur pour les modules ES6, par conséquent il faut indiquer à Babel de ne pas compiler les `import`/`export`.<br>
 	Modifiez le fichier `.babelrc` comme suit (**attention: notez bien le tableau dans un tableau !**) :
 	```json
@@ -51,36 +51,39 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 		["@babel/env", {"modules": false}]
 	],
 	```
-	Pour prendre en compte la nouvelle configuration de Babel, stoppez (<kbd>CTRL</kbd>+<kbd>C</kbd>) puis relancez la compilation à l'aide de la commande `npm run watch`
+	Pour prendre en compte la nouvelle configuration de Babel, **stoppez (<kbd>CTRL</kbd>+<kbd>C</kbd>) puis relancez** la compilation à l'aide de la commande `npm run watch`
 
 1.  **Passez enfin les classes `Component` et `Img` dans des modules ES6 distincts** (`src/Component.js` et `src/Img.js`).
-
-	***Rappelez vous :** tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis importé dans un autre fichier.*
-
 	Le fichier `main.js` conservera uniquement :
     - l'instanciation et l'affichage (`render()`) du composant de titre
     - l'instanciation et l'affichage (`render()`) de l'image
 
-	***NB1 :** Exporter **par défaut** une constante sur la même ligne que sa création est interdit (cf. la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)):*
-	```js
-	export default const data = [...]; // ERREUR !
-	```
-	*Il faut obligatoirement faire cela en deux étapes :*
-	```js
-	const data = [...];
-	export default data; // OK !
-	```
-	***NB2 :** Un export simple (pas par défaut) est en revanche autorisé :*
-	```js
-	export const data = [...]; // OK !
-	```
-	***NB3 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :*
-	```js
-	export default class Component {...} // OK !
-	```
-	```js
-	export default function checkValue(value){...} // OK aussi !
-	```
+	<br>
+
+	> _**NB1 :** Rappelez vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis importé dans un autre fichier._
+
+	> _**NB2 :** Exporter **par défaut** une constante sur la même ligne que sa création est interdit (cf. la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)):_
+	> ```js
+	> export default const data = [...]; // ERREUR !
+	> ```
+	> _Il faut obligatoirement faire cela en deux étapes :_
+	> ```js
+	> const data = [...];
+	> export default data; // OK !
+	> ```
+
+	> _**NB2 :** Un export simple (pas par défaut) est en revanche autorisé :_
+	> ```js
+	> export const data = [...]; // OK !
+	> ```
+
+	> _**NB3 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :_
+	> ```js
+	> export default class Component {...} // OK !
+	> ```
+	> ```js
+	> export default function checkValue(value){...} // OK aussi !
+	> ```
 
 2. **Compilez votre code et testez la page dans le navigateur** : le résultat doit être identique à celui obtenu précédemment :<br><a href="images/readme/screen-02.png"><img src="images/readme/screen-02.png" ></a>
 
@@ -114,6 +117,8 @@ Comme vu en cours, le bundler le plus employé en JS est [Webpack](https://webpa
 			path: path.resolve(__dirname, './build'),
 			filename: 'main.bundle.js'
 		},
+		// compatibilité anciens navigateurs (si besoin du support de IE11 ou android 4.4)
+		target: ['web', 'es5'],
 		// connexion webpack <-> babel :
 		module: {
 			rules: [
@@ -137,6 +142,13 @@ Comme vu en cours, le bundler le plus employé en JS est [Webpack](https://webpa
 	```
 5. **Lancez la compilation** : stoppez le watch précédent (<kbd>CTRL</kbd>+<kbd>C</kbd>), effacez tout le contenu du dossier `build` et relancez la compilation à l'aide de la commande `npm run watch` (*qui lancera cette fois webpack et non plus Babel*)
 
+	> _**NB :** selon votre version de webpack il est possible qu'un warning apparaisse à la compilation :_
+	> ```bash
+	> (node:81217) [DEP_WEBPACK_WATCH_WITHOUT_CALLBACK] DeprecationWarning: A 'callback' argument need to be provided to the 'webpack(options, callback)' function when the 'watch' option is set. There is no way to handle the 'watch' option without a callback.
+	> (Use `node --trace-deprecation ...` to show where the warning was created)
+	> ```
+	> _il s'agit d'un bug connu de la dernière version de webpack en cours de résolution (cf. https://github.com/webpack/webpack-cli/issues/1918), mais il n'est pas bloquant, vous pouvez l'ignorer._
+
 6. **Enfin, vérifiez dans le navigateur que la page s'affiche toujours** et que dans l'onglet "Réseau"/"Network" vous n'avez maintenant bien plus qu'un seul fichier JS téléchargé par le navigateur : le `build/main.bundle.js`
 
 	<img src="images/readme/modules-network-bundle.png" />
@@ -150,5 +162,5 @@ Vous l'aurez peut-être remarqué, les deux scripts que l'on vient d'ajouter au 
 3. **Comparez** le fichier `main.bundle.js` généré avec le mode "production" et le `main.bundle.dev.js` qui avait été généré en mode "development". A votre avis, quelle est l'utilité du mode "production" ?
 4. **Demandez au formateur qui encadre votre séance TP si vous avez vu juste avant de passer à la suite.**
 
-## Étape suivante
-Maintenant que les modules sont en place, et s'il vous reste du temps dans ce TP vous pouvez travailler sur des concepts de POO plus avancés : [E. Pour aller plus loin : POO avancée](E-poo-avancee.md)
+## Étape suivante <!-- omit in toc -->
+Maintenant que les modules sont en place, et s'il vous reste du temps dans ce TP vous pouvez travailler sur des concepts de POO plus avancés : [E. POO avancée](E-poo-avancee.md)
