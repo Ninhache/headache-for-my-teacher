@@ -61,7 +61,7 @@ Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans u
 - placer la balise `<script>` en toute fin de fichier html, juste **avant** la balise fermante `</body>`
 - placer la balise `<script>` dans le `<head>` du fichier, mais y ajouter un attribut **`defer`** (cf. [doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer))
 
-C'est cette dernière solution que je préconise car elle présente l'avantage de ne pas mélanger le contenu du document (le `<body>`) avec des informations annexes comme le chargement de scripts JS (qui relèvent plutôt du `<head>`) par ailleurs le support navigateur est très bon (IE10, Android 3+, iOS 5+, etc.)
+C'est cette solution que je préconise car elle présente l'avantage de ne pas mélanger le contenu du document (le `<body>`) avec des informations annexes comme le chargement de scripts JS (qui relèvent plutôt du `<head>`) par ailleurs le support navigateur est très bon (IE10, Android 3+, iOS 5+, etc.)
 
 <a href="https://caniuse.com/#feat=script-defer"><img src="https://caniuse.bitsofco.de/image/script-defer.webp" /></a>
 
