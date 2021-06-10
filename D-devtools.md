@@ -2,14 +2,16 @@
 
 # D. les devtools <!-- omit in toc -->
 
+_**Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".**_
+
+### IMPORTANT !! <!-- omit in toc -->
+**Pendant les TP gardez TOUJOURS les outils de développement (_et notamment la console_) ouverts, ça vous sauvera la vie !**
+
+
 ## Sommaire <!-- omit in toc -->
 - [D.1. devtools : La console](#d1-devtools-la-console)
 - [D.2. devtools : l'inspecteur d'éléments](#d2-devtools-linspecteur-déléments)
 - [D.3. devtools : l'onglet Sources](#d3-devtools-longlet-sources)
-
-_**Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".**_
-
-**Pendant les TP gardez TOUJOURS les outils de développement (_et notamment la console_) ouverts, ça vous sauvera la vie.**
 
 ## D.1. devtools : La console
 La console sert à afficher les instructions `console.log()` mais aussi les erreurs éventuelles dans votre code (vous me direz que ce n'est pas la peine, que vous ne faites jamais d'erreur, mais on sait tous les deux que c'est un mensonge, *"n'est-ce pas ?"*).
@@ -26,7 +28,7 @@ En fait l'objet `console` est un objet global qui contient la méthode `.log()` 
 - console.error()
 - console.clear()
 
-Enfin, la console permet de tester rapidement du code JS grâce à un champ de saisie. Tapez-y l'instruction `42+"12"-10` puis tapez <kbd>Entrée</kbd>. Incroyable !
+Enfin, la console permet de tester rapidement du code JS grâce à un champ de saisie. Tapez-y l'instruction `42+"12"-10` puis tapez <kbd>Entrée</kbd>. Le résultat s'affiche directement dans la console. Incroyable !
 
 ## D.2. devtools : l'inspecteur d'éléments
 
