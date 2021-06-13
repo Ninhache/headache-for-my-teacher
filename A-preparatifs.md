@@ -15,7 +15,11 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp1.git ~/tps-react/tp1
 	```
-	> _**NB :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** pensez à adapter !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+
+	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/profile/password/edit)) pour pouvoir cloner en http_
+
+	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp1.git`_
 
 2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP précédent](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
 	```bash

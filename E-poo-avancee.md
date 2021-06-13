@@ -2,25 +2,42 @@
 
 # E. POO avancée <!-- omit in toc -->
 
-## Sommaire <!-- omit in toc -->
-- [E.1. _Composition :_ La classe VideoItem](#e1-composition-la-classe-videoitem)
-- [E.2. _Composition :_ La classe VideoList](#e2-composition-la-classe-videolist)
-- [E.3. _Propriétés et méthodes statiques :_ La classe PageRenderer](#e3-propriétés-et-méthodes-statiques-la-classe-pagerenderer)
-- [E.4. _Setter & Getter :_ La propriété `videos`](#e4-setter-getter-la-propriété-videos)
+_**Si vous êtes arrivé à cette partie du TP bravo* ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
 
-_**Si vous êtes arrivé à cette partie du TP bravo ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
-
-Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtrise de la POO en JS et notamment de travailler sur les concepts de composition, sur les méthodes et propriétés privées, statiques, et sur les méthodes get/set.
+Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtrise de la POO en JS et notamment de travailler sur les concepts d'héritage, de composition, sur les méthodes et propriétés privées, statiques, et sur les méthodes get/set.
 
 **C'est parti !**
 
-## E.1. _Composition :_ La classe VideoItem
+## Sommaire <!-- omit in toc -->
+- [E.1. Héritage : La classe Img](#e1-héritage-la-classe-img)
+- [E.2. _Composition :_ La classe VideoItem](#e2-composition-la-classe-videoitem)
+- [E.3. _Composition :_ La classe VideoList](#e3-composition-la-classe-videolist)
+- [E.4. _Propriétés et méthodes statiques :_ La classe PageRenderer](#e4-propriétés-et-méthodes-statiques-la-classe-pagerenderer)
+- [E.5. _Setter & Getter :_ La propriété `videos`](#e5-setter-getter-la-propriété-videos)
+
+## E.1. Héritage : La classe Img
+Pour commencer, **créez une nouvelle classe `Img`** (_dans un module `src/Img.js`_) qui hérite de `Component` et dont le constructeur s'utilise comme ceci :
+
+```js
+const img = new Img('https://source.unsplash.com/wOHH-NUTvVc/600x340');
+```
+
+Testez le résultat de ce composant à l'aide de l'instruction :
+```js
+document.querySelector( '.videoList' ).innerHTML = img.render();
+```
+
+Le rendu ne doit pas avoir changé :
+
+<img src="images/readme/screen-02.png" >
+
+## E.2. _Composition :_ La classe VideoItem
 
 _**L'objectif de cet exercice est d'utiliser une classe à l'intérieur d'une autre. On va se servir de la classe `Img` développée précédemment à l'intérieur d'un nouveau composant : `VideoItem`.**_
 
 1. **Modifiez le code de la méthode `render()`** de la classe `Component` pour lui permettre de recevoir dans le paramètre `children` :
 	- soit une **chaîne de caractères** (comme c'est déjà le cas actuellement)
-	- soit un **tableau de chaînes de caractères.** <br>Par exemple : si `tag` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `render()` retournera la chaîne `"<div>youpiçamarche</div>"`.
+	- soit un **tableau de chaînes de caractères.** <br>Par exemple : si `tagName` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `render()` retournera la chaîne `"<div>youpiçamarche</div>"`.
 
 	> _**NB :** Pour ne pas alourdir trop le code de la méthode `render()` et pour avoir un code plus lisible, passez le code de rendu des enfants, dans une méthode `renderChildren()`._
 
@@ -48,7 +65,7 @@ _**L'objectif de cet exercice est d'utiliser une classe à l'intérieur d'une au
 	- si cet enfant est lui-même une instance de Component, on fait alors appel à la méthode `render()` du `Component` enfant (petit indice : ça ressemble quand même beaucoup au concept de "récursivité"...)
 	- si l'enfant est une chaîne de caractères, alors la chaîne est ajoutée telle qu'elle, comme auparavant
 
-	> **NB :** Pour tester si un enfant est de la classe `Component`, vous pouvez là aussi utiliser l'opérateur [`instanceof`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof)_
+	> _**NB :** Pour tester si un enfant est de la classe `Component`, vous pouvez là aussi utiliser l'opérateur [`instanceof`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof)_
 
 	Si votre code fonctionne correctement, vous devez avoir le rendu suivant :
 
@@ -81,7 +98,7 @@ _**L'objectif de cet exercice est d'utiliser une classe à l'intérieur d'une au
 
 	<img src="images/readme/screen-04.png" >
 
-## E.2. _Composition :_ La classe VideoList
+## E.3. _Composition :_ La classe VideoList
 
 _**Après un exemple simple de composition, attaquons nous à un cas plus complexe : celui de la `VideoList`.**_
 
@@ -153,9 +170,9 @@ Cette classe va nous permettre d'afficher plusieurs vignettes côte à côte gr�
 
 	<img src="images/readme/screen-05.png" >
 
-## E.3. _Propriétés et méthodes statiques :_ La classe PageRenderer
+## E.4. _Propriétés et méthodes statiques :_ La classe PageRenderer
 
-Pour rappel les propriétés et méthodes statiques peuvent se déclarer à l'aide du mot clé `static`. Ces propriétés/méthodes sont définies et s'utilisent au niveau de la classe (et pas de l'instance) comme ceci :
+Les propriétés et méthodes statiques peuvent se déclarer à l'aide du mot clé `static`. Ces propriétés/méthodes n'existent qu'au niveau de la classe (et pas de l'instance) et s'utilisent comme ceci :
 
 ```js
 class Counter {
@@ -188,7 +205,7 @@ class Character {
 }
 ```
 
-Le support des propriétés et méthodes privées est en stage 3/4 de spécification. Ce n'est donc pas encore dans la spec EcmaScript officielle. Néanmoins il est possible de les utiliser grâce à au plugin Babel [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) que l'on a déjà installé précédemment (c'est le même que pour les propriétés publiques).
+Comme les propriétés publiques, le support des propriétés et méthodes privées n'est pas encore dans la spec officielle mais devrait être intégré à ES2022 (ES13). Néanmoins il est possible de les utiliser grâce au `preset-env` qui inclue ces syntaxes.
 
 > _**NB :** Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete` comme dans d'autres langages, la réponse se trouve ici :_ https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x
 
@@ -201,7 +218,7 @@ Le support des propriétés et méthodes privées est en stage 3/4 de spécifica
 3. **Créez une classe `PageRenderer`** (dans un module `src/PageRenderer.js`) avec :
 	- une propriété statique `titleElement`
 	- une propriété statique `contentElement`
-	- une méthode statique `renderPage( page )` qui affiche dans `titleElement` le résultat de l'appel à la méthode `page.renderTitle()` et dans contentElement le résultat de l'appel à la méthode `page.render()` de la page passée en paramètre.
+	- une méthode statique `renderPage( page )` qui affiche dans `titleElement` le résultat de l'appel à la méthode `page.renderTitle()` et dans `contentElement` le résultat de l'appel à la méthode `page.render()` de la page passée en paramètre.
 4. **Dans le `main.js`, renseignez les valeurs de `titleElement` et `contentElement` comme ceci :**
 
 	```js
@@ -210,10 +227,16 @@ Le support des propriétés et méthodes privées est en stage 3/4 de spécifica
 	```
 5. **Affichez enfin la `VideoList` grâce à la classe `PageRenderer`**
 
+	```js
+	PageRenderer.renderPage( videoList );
+	```
 
-## E.4. _Setter & Getter :_ La propriété `videos`
+	> _**NB :** pensez à supprimer les lignes du `main.js` qui s'occupaient jusque là de rendre la liste des vidéos_
 
-Vous pouvez déclarer des getter et des setters de la forme suivante :
+
+## E.5. _Setter & Getter :_ La propriété `videos`
+
+Vous pouvez déclarer des getter et des setters de la manière suivante :
 
 ```js
 class Character {

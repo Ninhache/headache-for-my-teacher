@@ -1,19 +1,21 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. POO <!-- omit in toc -->
+# C. POO <!-- omit in toc -->
+
+_**Nous allons développer dans ce TP une classe `Component` qui va permettre de générer du code HTML en JS.**_
+
+A chaque étape du TP vous allez perfectionner la classe Component pour la rendre capable de gérer des paramètres supplémentaires.
+
+> _**NB :** Dans ce TP vous coderez dans un premier temps vos classes directement dans le fichier `src/main.js` **sans compiler** votre code et **sans passer par des fichiers (modules) séparés**._
+>
+> _Dans la suite du TP on compilera notre code pour le rendre compatible avec tous les navigateurs, et on organisera notre code plus proprement en séparant les classes dans des modules différents._ \
+> _Mais pour le moment on va simplifier la mise en place en remettant ça à plus tard (ne faites pas ça dans la vraie vie !)._
 
 ## Sommaire <!-- omit in toc -->
 - [B.1. Rappels de syntaxe](#b1-rappels-de-syntaxe)
 	- [B.1.1. class & propriétés publiques](#b11-class-propriétés-publiques)
 	- [B.1.2. méthodes](#b12-méthodes)
 - [B.2. La classe Component](#b2-la-classe-component)
-- [B.3. Héritage : La classe Img](#b3-héritage-la-classe-img)
-
-**NB : Dans ce TP vous coderez dans un premier temps vos classes directement dans le fichier `src/main.js` sans compiler votre code et sans passer par des fichiers (modules) séparés.**
-
-Dans la suite du TP on compilera notre code pour le rendre compatible avec tous les navigateurs, et on organisera notre code plus proprement en séparant les classes dans des modules différents.
-
-Mais pour le moment on va simplifier la mise en place en remettant ça à plus tard (*ne faites pas ça dans la vraie vie !*).
 
 ## B.1. Rappels de syntaxe
 ### B.1.1. class & propriétés publiques
@@ -26,7 +28,7 @@ class Character {
 }
 const heisenberg = new Character('Walter');
 ```
-La création de propriétés d'instances se fait par l'utilisation du mot clé `this` dans le constructeur : `this.firstName = firstName;` permet de créer une propriété `name` sur l'instance en cours de création et de lui assigner la valeur passée au constructeur via l'instruction `new Character('Walter');`.
+La création de propriétés d'instances se fait par l'utilisation du mot clé `this` dans le constructeur : `this.firstName = firstName;` permet de créer une propriété `firstName` sur l'instance en cours de création et de lui assigner la valeur passée au constructeur via l'instruction `new Character('Walter');`.
 
 On peut ensuite accéder aux propriétés de l'objet en utilisant la notation pointée :
 ```js
@@ -41,9 +43,9 @@ class Character {
 	}
 }
 ```
-Attention cependant, cette notation n'est **pas encore dans la spec officielle** d'EcmaScript (la spec suivie par JavaScript) mais a des chances d'être intégrée dans la version 2021 d'EcmaScript (ES12) : cf. https://github.com/tc39/proposal-class-fields et https://tc39.github.io/proposal-class-fields/
+Attention cependant, cette notation n'est **pas encore dans la spec officielle** d'EcmaScript (_la spec suivie par JavaScript_) mais devrait être intégrée dans la version 2022 de la spec (ES13) : cf. https://github.com/tc39/proposals/blob/master/finished-proposals.md et https://github.com/tc39/notes/blob/HEAD/meetings/2021-04/apr-19.md#class-fields-private-methods-and-static-class-features-for-stage-4
 
-Pour pouvoir l'utiliser avec Babel, il faudra modifier légèrement la configuration de Babel (cf. chapitre suivant).
+Ceci dit, Babel permet déjà de l'utiliser (cf. chapitre suivant) !
 
 ### B.1.2. méthodes
 La création de méthodes d'une classe se fait de la manière suivante :
@@ -67,7 +69,7 @@ heisenberg.fullName();
 
 ## B.2. La classe Component
 1. **Effacez tout le contenu du fichier `src/main.js`**.
-2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la section `<div class="container">` comme ceci :
+2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la balise `<div class="container">` comme ceci :
 	```html
 	<div class="container">
 		<header></header>
@@ -80,22 +82,26 @@ heisenberg.fullName();
 	const title = new Component( 'h1' );
 	document.querySelector('.container > header').innerHTML = title.render();
 	```
-	+ **le constructeur** prend en paramètre une chaîne nommée `tag` pour le moment simplement sauvegardée dans une propriété de l'instance: `this.tag`
+	+ **le constructeur** prend en paramètre une chaîne nommée `tagName` pour le moment simplement sauvegardée dans une propriété de l'instance: `this.tagName`
 	+ **la classe dispose d'une méthode `render()`**.
 
-  		Cette méthode retourne une chaîne de caractères au format html qui correspond à une balise dont le type dépend de l'attribut `tag` passé au constructeur.
+  		Cette méthode retourne une chaîne de caractères au format html qui correspond à une balise dont le type dépend de l'attribut `tagName` passé au constructeur.
 
-		Par exemple si `tag` vaut `'div'` alors `render()` retournera la chaîne de caractères :
+		Par exemple si `tagName` vaut `'div'` alors `render()` retournera la chaîne de caractères :
 		```js
 		'<div></div>'
 		```
-		Dans notre exemple plus haut, `tag` vaut `'h1'`, `render()` retourne donc :
+		Dans notre exemple plus haut, `tagName` vaut `'h1'`, `render()` retourne donc :
 		```js
 		'<h1></h1>'
 		```
 		> _**NB :** Je vous conseille d'utiliser les **template strings** dans cette méthode, cela vous permettra facilement d'injecter des valeurs dans votre chaîne et en plus de passer des lignes dans la chaîne de caractères pour rendre votre code plus lisible._
 
 	**Vérifiez que votre classe fonctionne correctement en inspectant le code généré par votre application avec l'Inspecteur d'éléments des devtools du navigateur.**
+
+	> _**NB :** On passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : rien ne s'affiche car on n'a pas précisé de contenu au `<h1>` !_
+
+	<img src="images/readme/screen-01-h1.png" />
 
 
 4. **Ajoutez un second paramètre au constructeur, nommé `children`.** Modifiez le code de la méthode render() de manière à ce que le code suivant :
@@ -116,24 +122,26 @@ heisenberg.fullName();
 	```js
 	const img = new Component( 'img' );
 	```
-	`render()` doit retourner `<img />` et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
+	`render()` doit retourner `<img />` (_une balise "auto fermante", c'est à dire sans enfants_) et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
 
 	**Testez votre classe comme ceci** :
 	```js
 	const img = new Component( 'img' );
 	document.querySelector( '.videoList' ).innerHTML = img.render();
 	```
-	Vérifiez dans **l'inspecteur d'éléments** que votre image est bien ajoutée dans `videoList`.
+	Vérifiez dans **l'inspecteur d'éléments** que votre image est bien ajoutée dans `videoList` :
 
-	> _**NB :** On passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
+	> _**NB :** Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
 
 	> _**NB2 :** Selon votre navigateur il est possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img.render())`, là vous saurez avec certitude si votre méthode retourne bien `<img />`._
+
+	<img src="images/readme/screen-02-inspecteur.png" >
 
 6. **Ajoutez un paramètre `attribute` en 2e position du constructeur de la classe `Component`  : enregistrez ce paramètre dans une propriété d'instance `this.attribute`.**
 
 	La signature du constructeur sera désormais :
 	```js
-	constructor( tag, attribute, children ) {
+	constructor( tagName, attribute, children ) {
 	```
 
 	**Modifiez la méthode `render()` pour prendre en compte le paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est à dire que si le paramètre `attribute` a été fourni au constructeur comme ceci :
@@ -152,18 +160,5 @@ heisenberg.fullName();
 
 	<img src="images/readme/screen-02.png" >
 
-## B.3. Héritage : La classe Img
-1. **Créez maintenant une nouvelle classe `Img`** qui hérite de `Component` et dont le constructeur s'utilise comme ceci :
-	```js
-	const img = new Img('https://source.unsplash.com/wOHH-NUTvVc/600x340');
-	```
-	Testez le résultat de ce composant à l'aide de l'instruction :
-	```js
-	document.querySelector( '.videoList' ).innerHTML = img.render();
-	```
-	Le rendu doit être identique à la capture précédente :
-
-	<img src="images/readme/screen-02.png" >
-
 ## Étape suivante <!-- omit in toc -->
-Si vous avez terminé cette partie sur la POO, il est l'heure de compiler notre code avec Babel pour le rendre compatible avec les vieux navigateurs. RDV dans la partie suivante : [C. Compiler avec Babel](./C-babel.md)
+Si vous avez terminé cette partie sur la POO, il est l'heure de compiler notre code avec Babel pour le rendre compatible avec les vieux navigateurs. RDV dans la partie suivante : [D. Compiler avec Babel](./D-babel.md)

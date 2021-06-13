@@ -9,7 +9,7 @@
 - [D.4. mode dev vs mode prod](#d4-mode-dev-vs-mode-prod)
 
 ## D.1. Rappels
-**Comme vu en cours, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier** (*plutôt que d'avoir à maintenir une longue liste de balises `<script>` dans le fichier html*).
+**Comme vu en cours, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier** (_plutôt que d'avoir à maintenir une longue liste de balises `<script>` dans le fichier html_).
 
 Par exemple, si l'on a deux fichiers `main.js` et `vehicle.js`, on peut partager une variable de l'un à l'autre grâce aux instructions `import` et `export` :
 ```js
@@ -47,18 +47,15 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 2. **Il faut ensuite configurer Babel.** En effet, par défaut Babel va chercher à compiler toutes les instructions `import` et `export` qu'il trouvera pour les transformer en code compatible ES5. Ici on veut utiliser le support natif du navigateur pour les modules ES6, par conséquent il faut indiquer à Babel de ne pas compiler les `import`/`export`.<br>
 	Modifiez le fichier `.babelrc` comme suit (**attention: notez bien le tableau dans un tableau !**) :
 	```json
-	"presets": [
-		["@babel/env", {"modules": false}]
-	],
+	{
+		"presets": [
+			["@babel/env", {"modules": false}]
+		]
+	}
 	```
 	Pour prendre en compte la nouvelle configuration de Babel, **stoppez (<kbd>CTRL</kbd>+<kbd>C</kbd>) puis relancez** la compilation à l'aide de la commande `npm run watch`
 
-1.  **Passez enfin les classes `Component` et `Img` dans des modules ES6 distincts** (`src/Component.js` et `src/Img.js`).
-	Le fichier `main.js` conservera uniquement :
-    - l'instanciation et l'affichage (`render()`) du composant de titre
-    - l'instanciation et l'affichage (`render()`) de l'image
-
-	<br>
+3.  **Passez enfin la classe `Component` dans un module ES6 distinct `src/Component.js`.**
 
 	> _**NB1 :** Rappelez vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis importé dans un autre fichier._
 
@@ -72,12 +69,12 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default data; // OK !
 	> ```
 
-	> _**NB2 :** Un export simple (pas par défaut) est en revanche autorisé :_
+	> _**NB3 :** Un export simple (pas par défaut) d'une const est en revanche autorisé :_
 	> ```js
 	> export const data = [...]; // OK !
 	> ```
 
-	> _**NB3 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :_
+	> _**NB4 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :_
 	> ```js
 	> export default class Component {...} // OK !
 	> ```
@@ -85,9 +82,11 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default function checkValue(value){...} // OK aussi !
 	> ```
 
-2. **Compilez votre code et testez la page dans le navigateur** : le résultat doit être identique à celui obtenu précédemment :<br><a href="images/readme/screen-02.png"><img src="images/readme/screen-02.png" ></a>
+4. **Compilez votre code et testez la page dans le navigateur** : le résultat doit être identique à celui obtenu précédemment :
 
-3. **Ouvrez l'onglet Réseau/Network des devtools, vous devez normalement voir le chargement automatique des différents modules** (une ligne par fichier JS)
+	<img src="images/readme/screen-02.png" >
+
+5. **Ouvrez l'onglet Réseau/Network des devtools, vous devez normalement voir le chargement automatique des différents modules** (_une ligne par fichier JS_)
 
 	<img src="images/readme/modules-network.png" />
 
@@ -99,9 +98,9 @@ Le but d'un "bundler" est de rassembler tous les scripts de notre application (t
 
 Comme vu en cours, le bundler le plus employé en JS est [Webpack](https://webpack.js.org/), c'est donc cet outil que l'on va installer et configurer.
 
-1. **Dans le fichier `index.html`, retirez l'attribut `type="module"` de la balise script et remettez l'attribut `defer`. Remplacez aussi le nom du fichier `build/main.js` par `build/main.bundle.js`** (*c'est en effet une pratique courante de nommer les fichiers de ce type avec le mot "bundle"*).
+1. **Dans le fichier `index.html`, retirez l'attribut `type="module"` de la balise script et remettez l'attribut `defer`. Remplacez aussi le nom du fichier `build/main.js` par `build/main.bundle.js`** (_c'est en effet une pratique courante de nommer les fichiers de ce type avec le mot "bundle"_).
 
-2. **Installez webpack** à l'aide de la commande suivante (*prenez garde à la lancer à la racine de votre TP, là où se trouve le fichier `package.json`*):
+2. **Installez webpack** à l'aide de la commande suivante (_prenez garde à la lancer à la racine de votre TP, là où se trouve le fichier `package.json`_):
 	```bash
 	npm install --save-dev webpack webpack-cli babel-loader
 	```
@@ -131,23 +130,16 @@ Comme vu en cours, le bundler le plus employé en JS est [Webpack](https://webpa
 				}
 			]
 		},
-		devtool: 'source-map'
+		devtool: 'eval-cheap-module-source-map'
 	}
 	```
 
-4. **Modifiez les scripts `"build"` et `"watch"` du fichier `package.json` pour replacer babel par webpack** (*notez quand même que babel sera toujours utilisé mais en arrière plan par webpack grâce au `webpack.config.js` que l'on vient d'écrire*):
+4. **Modifiez les scripts `"build"` et `"watch"` du fichier `package.json` pour remplacer babel par webpack** (_notez quand même que **babel sera toujours utilisé mais en arrière plan** par webpack grâce au `webpack.config.js` que l'on vient d'écrire_):
 	```json
 	"build": "webpack --mode=production",
 	"watch": "webpack --mode=development --watch"
 	```
 5. **Lancez la compilation** : stoppez le watch précédent (<kbd>CTRL</kbd>+<kbd>C</kbd>), effacez tout le contenu du dossier `build` et relancez la compilation à l'aide de la commande `npm run watch` (*qui lancera cette fois webpack et non plus Babel*)
-
-	> _**NB :** selon votre version de webpack il est possible qu'un warning apparaisse à la compilation :_
-	> ```bash
-	> (node:81217) [DEP_WEBPACK_WATCH_WITHOUT_CALLBACK] DeprecationWarning: A 'callback' argument need to be provided to the 'webpack(options, callback)' function when the 'watch' option is set. There is no way to handle the 'watch' option without a callback.
-	> (Use `node --trace-deprecation ...` to show where the warning was created)
-	> ```
-	> _il s'agit d'un bug connu de la dernière version de webpack en cours de résolution (cf. https://github.com/webpack/webpack-cli/issues/1918), mais il n'est pas bloquant, vous pouvez l'ignorer._
 
 6. **Enfin, vérifiez dans le navigateur que la page s'affiche toujours** et que dans l'onglet "Réseau"/"Network" vous n'avez maintenant bien plus qu'un seul fichier JS téléchargé par le navigateur : le `build/main.bundle.js`
 
