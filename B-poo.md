@@ -161,4 +161,4 @@ heisenberg.fullName();
 	<img src="images/readme/screen-02.png" >
 
 ## Étape suivante <!-- omit in toc -->
-Si vous avez terminé cette partie sur la POO, il est l'heure de compiler notre code avec Babel pour le rendre compatible avec les vieux navigateurs. RDV dans la partie suivante : [D. Compiler avec Babel](./D-babel.md)
+Si vous avez terminé cette partie sur la POO, il est l'heure de compiler notre code avec Babel pour le rendre compatible avec les vieux navigateurs. RDV dans la partie suivante : [C. Compiler avec Babel](./C-babel.md)
