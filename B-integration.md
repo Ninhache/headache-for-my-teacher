@@ -12,7 +12,7 @@
 ## B.1. Lancement d'un serveur HTTP
 
 **Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>
-On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (_installé au point A.2._) et **[npx](https://www.npmjs.com/package/npx)** qui est un des 2 principaux utilitaires fournis automatiquement avec Node (_l'autre étant [npm : Node Package Manager](https://fr.wikipedia.org/wiki/Npm) dont nous parlerons plus tard_).
+On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (_installé au point A.2._) et **[npx](https://docs.npmjs.com/cli/v8/commands/npx)** qui est une commande fournie automatiquement avec Node (_basée sur [npm : Node Package Manager](https://fr.wikipedia.org/wiki/Npm) dont nous parlerons plus tard_).
 
 1. **Tout d'abord, ouvrez un terminal directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (_ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`_).
 
