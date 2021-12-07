@@ -23,7 +23,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
 	- Git : https://git-scm.com/
-	- Node.js (_version **current 16.x** de préférence, LTS 14.X mini_): https://nodejs.org/fr/
+	- Node.js (_version **current 17.x** de préférence, LTS 16.x mini_): https://nodejs.org/fr/
 	- VSCodium : https://vscodium.com/ (Si vous avez déjà vscode, ça fera très bien l'affaire !)
 
 2. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
@@ -33,7 +33,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp0.git ~/tps-react/tp0
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/profile/password/edit)) pour pouvoir cloner en http_
 
