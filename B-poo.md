@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# C. POO <!-- omit in toc -->
+# B. POO <!-- omit in toc -->
 
 _**Nous allons développer dans ce TP une classe `Component` qui va permettre de générer du code HTML en JS.**_
 
