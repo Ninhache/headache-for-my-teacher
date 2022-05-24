@@ -12,7 +12,7 @@
 ## B.1. Lancement d'un serveur HTTP
 
 **Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>
-On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (_installé au point A.2._) et **[npx](https://docs.npmjs.com/cli/v8/commands/npx)** qui est une commande fournie automatiquement avec Node (_basée sur [npm : Node Package Manager](https://fr.wikipedia.org/wiki/Npm) dont nous parlerons plus tard_).
+On pourrait, pour cet exercice, utiliser n'importe quel serveur http (_apache, tomcat, etc._) mais je vous propose d'utiliser Node.js (_installé au point A.2._) et **[npx](https://docs.npmjs.com/cli/v8/commands/npx)** qui est une commande fournie automatiquement avec Node (_basée sur [npm - Node Package Manager](https://fr.wikipedia.org/wiki/Npm) - dont nous parlerons plus tard_).
 
 1. **Tout d'abord, ouvrez un terminal directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (_ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`_).
 
@@ -20,7 +20,7 @@ On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, to
 	> - _pas besoin de jongler entre plusieurs fenêtres pour passer de l'IDE au terminal_
 	> - _le terminal s'ouvre **directement dans le dossier du projet**_
 
-2. **Dans ce terminal intégré, lancez un serveur http dans le dossier du TP** :
+2. **Dans ce terminal intégré, lancez un serveur http à la racine du TP** :
 	```bash
 	npx serve -l 8000
 	```

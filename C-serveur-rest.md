@@ -4,7 +4,7 @@
 
 _**Durant les TPs nous aurons à connecter notre application React à une API REST fournie ici : https://framagit.org/formation/react/api-server**_
 
-Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fourni une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (générée à la volée).
+Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (générée à la volée).
 
 1. **Commencez par cloner le serveur :**
 	```bash
