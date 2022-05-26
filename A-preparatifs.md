@@ -33,7 +33,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp0.git ~/tps-react/tp0
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1-2`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
 
