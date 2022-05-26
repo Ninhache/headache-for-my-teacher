@@ -130,7 +130,7 @@ Comme vu en cours, le bundler le plus employé en JS est [Webpack](https://webpa
 				}
 			]
 		},
-		devtool: 'eval-cheap-module-source-map'
+		devtool: 'source-map'
 	}
 	```
 
