@@ -13,7 +13,7 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 - [E.2. _Composition :_ La classe VideoItem](#e2-composition-la-classe-videoitem)
 - [E.3. _Composition :_ La classe VideoList](#e3-composition-la-classe-videolist)
 - [E.4. _Propriétés et méthodes statiques :_ La classe PageRenderer](#e4-propriétés-et-méthodes-statiques-la-classe-pagerenderer)
-- [E.5. _Setter & Getter :_ La propriété `videos`](#e5-setter-getter-la-propriété-videos)
+- [E.5. _Setter \& Getter :_ La propriété `videos`](#e5-setter-getter-la-propriété-videos)
 
 ## E.1. Héritage : La classe Img
 Pour commencer, **créez une nouvelle classe `Img`** (_dans un module `src/Img.js`_) qui hérite de `Component` et dont le constructeur s'utilise comme ceci :

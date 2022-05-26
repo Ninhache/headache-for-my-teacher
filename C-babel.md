@@ -86,27 +86,27 @@ Ce fichier sert à plusieurs choses et notamment :
 
 	> _**NB :** Le dossier **`node_modules` n'est jamais versionné** (c'est en général un dossier relativement volumineux) mais le **`package.json` lui l'est** car il servira de "recette" pour indiquer aux développeurs qui rejoindraient le projet quels sont les paquets nécessaires._
 	>
-	> _En effet, grâce au `package.json`, un nouveau développeur n'a qu'à exécuter la commande `npm install` (sans préciser de nom de paquet) pour installer automatiquement toutes les dépendances du projet (c'est d'ailleurs ce que vous ferez dans les prochains TPs 🙂 ) !_
+	> _En effet, grâce au `package.json`, un nouveau développeur n'a qu'à exécuter la commande `npm install` (sans préciser de nom de paquet) pour installer automatiquement toutes les dépendances du projet (c'est d'ailleurs ce que vous ferez dans les prochains TPs_ 🙂 _) !_
 
 2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est cette dernière possibilité que l'on va maintenant exploiter pour nous simplifier la vie dans la suite du TP.
 
 ## C.4. Créer un script de build personnalisé
-Jusque là pour lancer la compilation avec [Babel](https://babeljs.io), nous avons vu qu'il fallait lancer la commande suivante :
+Jusque là pour lancer la compilation avec [Babel](https://babeljs.io), nous avons vu qu'il fallait exécuter la commande suivante :
 
 ```bash
 ./node_modules/.bin/babel src -d build
 ```
 
-Grâce au `package.json` **on va créer un "raccourci" pour lancer cette commande plus facilement.**
+Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette commande plus facilement.
 
-1. Dans VSCodium, **ouvrez le fichier `package.json`** en tapant <kbd>CTRL</kbd>+<kbd>P</kbd> puis le nom du fichier ( <kbd>Enter</kbd> _pour ouvrir le fichier_)
+1. **Dans VSCodium, ouvrez le fichier `package.json`** en tapant <kbd>CTRL</kbd>+<kbd>P</kbd> puis le nom du fichier ( <kbd>Enter</kbd> _pour ouvrir le fichier_)
 2. **Localisez la section "scripts" du fichier**. Elle doit ressembler à :
 	```json
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	```
-3. **Cette section permet d'indiquer des tâches qui pourront être lancées à l'aide de la commande `npm run <nom-du-script>`.** Par défaut le `package.json` contient une tâche `"test"`. Lancez donc ce script `"test"` en tapant :
+3. **Cette section permet d'ajouter des tâches qui pourront être lancées à l'aide de la commande `npm run <nom-du-script>`.** Par défaut le `package.json` contient une tâche `"test"`. Lancez donc ce script `"test"` en tapant :
 	```bash
 	npm run test
 	```

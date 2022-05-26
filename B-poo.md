@@ -13,7 +13,7 @@ A chaque étape du TP vous allez perfectionner la classe Component pour la rendr
 
 ## Sommaire <!-- omit in toc -->
 - [B.1. Rappels de syntaxe](#b1-rappels-de-syntaxe)
-	- [B.1.1. class & propriétés publiques](#b11-class-propriétés-publiques)
+	- [B.1.1. class \& propriétés publiques](#b11-class-propriétés-publiques)
 	- [B.1.2. méthodes](#b12-méthodes)
 - [B.2. La classe Component](#b2-la-classe-component)
 
@@ -137,12 +137,13 @@ heisenberg.fullName();
 
 	<img src="images/readme/screen-02-inspecteur.png" >
 
-6. **Ajoutez un paramètre `attribute` en 2e position du constructeur de la classe `Component`  : enregistrez ce paramètre dans une propriété d'instance `this.attribute`.**
+6. **Ajoutez un paramètre `attribute` en 2e position du constructeur de la classe `Component` : enregistrez ce paramètre dans une propriété d'instance `this.attribute`.**
 
 	La signature du constructeur sera désormais :
 	```js
 	constructor( tagName, attribute, children ) {
 	```
+	> _**NB :** comme on modifie la signature du constructeur de `Component`, l'instanciation du component "h1" n'est plus correcte (on passe seulement 2 paramètres au constructeur, le `children` se retrouve donc à la place du `attribute`). Pour régler le problème, vous avez le droit de modifier l'instanciation du h1 en passant `null` au paramètre `attribute` par exemple._
 
 	**Modifiez la méthode `render()` pour prendre en compte le paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est à dire que si le paramètre `attribute` a été fourni au constructeur comme ceci :
 
