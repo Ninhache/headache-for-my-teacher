@@ -43,9 +43,9 @@ class Character {
 	}
 }
 ```
-Attention cependant, cette notation n'est **pas encore dans la spec officielle** d'EcmaScript (_la spec suivie par JavaScript_) mais devrait être intégrée dans la version 2022 de la spec (ES13) : cf. https://github.com/tc39/proposals/blob/master/finished-proposals.md et https://github.com/tc39/notes/blob/HEAD/meetings/2021-04/apr-19.md#class-fields-private-methods-and-static-class-features-for-stage-4
+Cette notation a été intégrée tout récemment dans la spec officielle d'ECMAScript (_la spec suivie par JavaScript_) : elle fait partie des fonctionnalités incluses dans ES2022 (ES13) sortie en juin 2022 : cf. https://github.com/tc39/proposals/blob/master/finished-proposals.md et https://github.com/tc39/notes/blob/HEAD/meetings/2021-04/apr-19.md#class-fields-private-methods-and-static-class-features-for-stage-4
 
-Ceci dit, Babel permet déjà de l'utiliser (cf. chapitre suivant) !
+Ceci dit, cela fait plusieurs années que Babel permet de l'utiliser !
 
 ### B.1.2. méthodes
 La création de méthodes d'une classe se fait de la manière suivante :

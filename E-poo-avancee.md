@@ -205,7 +205,7 @@ class Character {
 }
 ```
 
-Comme les propriétés publiques, le support des propriétés et méthodes privées n'est pas encore dans la spec officielle mais devrait être intégré à ES2022 (ES13). Néanmoins il est possible de les utiliser grâce au `preset-env` qui inclue ces syntaxes.
+Comme les propriétés publiques, le support des propriétés et méthodes privées a été rajouté tout récemment dans ECMAScript (ES2022/ES13 sortie en juin 2022). Le `preset-env` de Babel permet de les utiliser dans notre code !
 
 > _**NB :** Si vous vous demandez pourquoi on écrit `#propriete` et pas `private propriete` comme dans d'autres langages, la réponse se trouve ici :_ https://github.com/tc39/proposal-class-fields/blob/master/PRIVATE_SYNTAX_FAQ.md#why-arent-declarations-private-x
 
