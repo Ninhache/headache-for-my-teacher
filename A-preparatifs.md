@@ -23,7 +23,14 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
 	- Git : https://git-scm.com/
-	- Node.js (_version **current 18.x** de préférence, 17.x mini_): https://nodejs.org/fr/
+	- Node.js (_version **current 18.x**_): https://nodejs.org/fr/
+
+		**ATTENTION :** si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**
+
+		<img src="images/readme/node-install.png" >
+
+		Cette case permettra d'installer des dépendances utiles pour le serveur REST que l'on lancera plus tard dans ce TP (notamment python et les visual c++ build tools).
+
 	- VSCodium : https://vscodium.com/ (Si vous avez déjà vscode, ça fera très bien l'affaire !)
 
 2. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*

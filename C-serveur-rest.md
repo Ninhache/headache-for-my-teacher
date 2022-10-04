@@ -16,7 +16,7 @@ Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API RES
 	npm i
 	```
 
-	> _**NB :** Si cette commande déclenche une erreur en rapport avec node-gyp et que vous êtes sur windows, installez les `windows-build-tools` en ouvrant un terminal **en mode administrateur** et en lançant la commande :_
+	> _**NB :** Si cette commande déclenche une erreur en rapport avec node-gyp et que vous êtes sur windows, installez les `windows-build-tools` en ouvrant un terminal **en mode ⚠ ADMINISTRATEUR ⚠ (IMPORTANT) ** et en lançant la commande :_
 	> ```bash
 	> npm install --global --production --verbose windows-build-tools
 	> ```
