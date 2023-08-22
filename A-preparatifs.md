@@ -23,7 +23,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
 	- Git : https://git-scm.com/
-	- Node.js (_version **current 18.x**_): https://nodejs.org/fr/
+	- Node.js (_version **current 20.x**_): https://nodejs.org/fr/download/current
 
 		**ATTENTION :** si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**
 
@@ -38,13 +38,11 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 3. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp0.git ~/tps-react/tp0
+	git clone https://github.com/formation-react/tp0.git ~/tps-react/tp0
 	```
 	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
-
-	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp0.git`_
+	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur github](https://github.com/settings/keys) et clonez à partir de cette URL : `git@github.com:formation-react/tp0.git`_
 
 ## A.3. VSCod\[e/ium\]
 
