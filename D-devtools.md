@@ -5,7 +5,7 @@
 _**Lorsque l'on développe en JS, les outils de debug dont on dispose nous sont fournis par le navigateur. Tous les navigateurs (même Internet Explorer...) disposent d'outils de développement. Sur Chrome, pour les afficher c'est donc, comme vu plus haut, la touche <kbd>F12</kbd>. On peut également les afficher en faisant un clic droit dans la page et en cliquant sur "Inspecter l'élément".**_
 
 ### IMPORTANT !! <!-- omit in toc -->
-**Pendant les TP gardez TOUJOURS les outils de développement (_et notamment la console_) ouverts, ça vous sauvera la vie !**
+⚠️ ⚠️ **Pendant les TP gardez TOUJOURS les outils de développement (_et notamment la console_) ouverts, ça vous sauvera la vie !** ⚠️ ⚠️
 
 ## Sommaire <!-- omit in toc -->
 - [D.1. La console](#d1-la-console)
@@ -21,14 +21,16 @@ La méthode `console.log()` peut recevoir plusieurs paramètres, ils seront dans
 ```js
 console.log('Welcome to ', {title:'REACTube', emoji: '📺'});
 ```
+Puis rechargez la page pour voir le résultat dans la console du navigateur.
 
-En fait l'objet `console` est un objet global qui contient la méthode `.log()` mais aussi d'autres méthodes qui permettent d'avoir un rendu différent et de filtrer les messages. Essayez les méthodes suivantes et constatez le résultat dans la console :
-- `console.warn('Oh oh attention')`
-- `console.error('fatal error lol')`
-- `console.table([['Walter','White'],['Skyler','White'],['Saul','Goodman']])`
-- `console.clear()`
+En fait "`console`" est un objet global qui contient la méthode `.log()` mais aussi d'autres méthodes qui permettent d'avoir un rendu différent et de filtrer les messages. Essayez les méthodes suivantes et constatez le résultat dans la console :
+- `console.warn('Oh oh attention');`
+- `console.error('fatal error lol');`
+- `console.clear();`
+- `console.table([['Walter','White'],['Skyler','White'],['Saul','Goodman']]);`
 
-Enfin, **la console permet de tester rapidement du code JS grâce à un champ de saisie**. Tapez-y l'instruction `42+"12"-10` puis <kbd>Entrée</kbd>. Le résultat s'affiche directement dans la console. Incroyable !
+Enfin, **la console permet de tester rapidement du code JS grâce à un champ de saisie**. Tapez-y l'instruction `42+"12"-10` puis <kbd>Entrée</kbd>. \
+Le résultat s'affiche directement dans la console. Incroyable !
 
 ## D.2. L'inspecteur d'éléments
 
@@ -45,20 +47,24 @@ C'est probablement l'onglet des devtools le plus important lorsqu'on développe 
 
 <img src="images/readme/devtools-sources.jpg" >
 
+Pour l'utiliser, commencez par ajouter dans le fichier `main.js`, le code suivant :
+```js
+const what = 'door';
+console.log('Hold', 'the', what );
+```
+
 1. **Ajout d'un breakpoint**
 
-	Pour tester cet onglet, remplacez le contenu de votre fichier `main.js` par le code suivant :
+	Rechargez la page, puis dans l'onglet "Sources" sélectionnez le fichier `main.js` (dans le panneau de gauche), puis cliquez sur le numéro de la 2e ligne :
 	```js
-	let what = 'door';
 	console.log('Hold', 'the', what );
 	```
-
-	Rechargez la page, puis dans l'onglet "Sources" sélectionnez le fichier `main.js` (dans le panneau de gauche), puis cliquez sur le numéro de la 2e ligne.
 
 	Une flèche bleue a du s'afficher à côté du numéro de ligne ce qui signifie qu'un breakpoint a été ajouté. Comme le code en question s'est déjà exécuté (_puisque notre JS se lance au chargement de la page_), rechargez la page pour que le code s'exécute à nouveau et déclenche cette fois notre breakpoint.
 
 
-	**Une fois la page rechargée, l'exécution est maintenant interrompue**, et il est possible de voir à droite, dans l'onglet "Scope", les valeurs des variables locales et notamment de la variable `what`. Vous pouvez aussi consulter la valeur des variables au survol de la variable directement dans le code !
+	**Une fois la page rechargée, l'exécution est maintenant interrompue**, et il est possible de voir à droite, dans l'onglet "Scope", les valeurs des variables locales et notamment de la constante `what`. Vous pouvez aussi consulter la valeur des variables au survol de la variable directement dans le code !
+
 
 	Pour reprendre l'exécution de la page, cliquez sur le bouton play bleu.
 
@@ -68,15 +74,15 @@ C'est probablement l'onglet des devtools le plus important lorsqu'on développe 
 
 	Au lieu d'ajouter manuellement un breakpoint comme on vient de le faire, il est possible de déclarer un breakpoint directement dans le code à l'aide d'une instruction JS : `debugger;`.
 
-	Modifiez le code de `main.js` : ajoutez entre les 2 lignes, une instruction `debugger` comme ceci :
+	Modifiez le code de votre application comme ceci : (_notez l'instruction `debugger` qu'on a insérée entre les 2 lignes de code de notre fichier_)
 	```js
-	let what = 'door';
+	const what = 'door';
 	debugger;
 	console.log('Hold', 'the', what );
 	```
 
-	Rechargez la page à nouveau avec les devtools ouverts, et constatez que l'exécution s'est arrêtée automatiquement sans avoir eu besoin de mettre de point d'arrêt manuellement ! Pratique !
+	Rechargez la page à nouveau avec les devtools ouverts, et constatez que l'exécution s'est arrêtée automatiquement sans avoir eu besoin de mettre de point d'arrêt manuel ! Pratique !
 
-	Supprimez enfin l'instruction `debugger;`.
+	Voilà, vous connaissez les principales façons de mettre des breakpoints, vous pouvez maintenant supprimer les 3 lignes du `main.js` qu'on a rajouté (`const what; ....`).
 
-_**Ça y est, c'est terminé ! <br>Félicitations, vous êtes maintenant prêt.e à démarrer la formation React !**_
+_**Et ça y est, c'est terminé ! <br>Félicitations, vous êtes maintenant prêt.e à démarrer la formation React !**_
