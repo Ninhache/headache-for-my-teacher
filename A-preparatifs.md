@@ -38,11 +38,13 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 3. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://github.com/formation-react/tp0.git ~/tps-react/tp0
+	git clone git@github.com:formation-react/tp0.git ~/tps-react/tp0
 	```
 	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur github](https://github.com/settings/keys) et clonez à partir de cette URL : `git@github.com:formation-react/tp0.git`_
+	> _**NB2 :** cette commande permet de **cloner en SSH** et nécessite que vous renseigniez votre clé SSH dans votre [compte utilisateur github](https://github.com/settings/keys). Pour plus de précisions sur la configuration de clés SSH avec github je vous recommande la [doc officielle (doc)](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-ssh-urls)._
+
+	> _**NB3 :** si vous préférez **cloner en https**, vous devrez vous créer un Personal access [dans votre compte github](https://github.com/settings/tokens) et cocher les droits `"repo"`. Vous pourrez ensuite cloner à partir de l'URL `https://github.com/formation-react/tp0.git` en tapant votre token à la place du mot de passe (plus d'infos dans [la documentation officielle](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls))._
 
 ## A.3. VSCod\[e/ium\]
 
