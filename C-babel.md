@@ -67,6 +67,8 @@ L'installation de Babel se fait avec npm (Node Package Manager - l'outil fourni 
 
 	Vérifiez que le fichier `build/main.js` est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas (s'il reste des `const`, des template strings ou des arrow functions), c'est que le `.babelrc` est mal configuré ou que vous avez raté une étape !
 
+	> _**NB :** Vous noterez que le dossier build figure dans notre `.gitignore` (tout fichier qui peut être généré à partir des fichiers déjà présents dans le repo git ne doit pas être versionné) cf. https://git-scm.com/docs/gitignore_
+
 2. **Une fois le fichier `build/main.js` créé, modifiez le fichier `index.html` pour charger ce fichier à la place du `src/main.js`.** Rechargez la page pour vérifier que tout fonctionne toujours correctement !
 
 ## C.3. Le fichier `package.json`
