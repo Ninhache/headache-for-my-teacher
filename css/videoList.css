@@ -20,6 +20,9 @@
 }
 .videoList > a:hover{
 }
+.videoList > img {
+	max-width: 100%;
+}
 .videoList > a img {
 	min-width: 100%;
 	width: 100%;
