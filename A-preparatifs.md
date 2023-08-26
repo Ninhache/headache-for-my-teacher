@@ -7,8 +7,6 @@
 - [A.2. Lancement du serveur HTTP](#a2-lancement-du-serveur-http)
 
 ## A.1. Récupération du projet
-**Ce repo contient une solution commentée du précédent TP.** <br>
-Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé) ou bien cloner ce repo et vous en servir comme base pour ce TP (dans ce cas pensez à quand même faire un `git pull` pour récupérer les éventuelles modifications de dernière minute ;) ).
 
 1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
@@ -40,9 +38,9 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 
 	Le résultat attendu est le suivant :
 
-	<img src="images/readme/screen-00.png" >
+	<img src="images/readme/screen-00.png">
 
 	> _**NB : Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. La POO](B-poo.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. La fonction renderElement](B-renderelement.md)
