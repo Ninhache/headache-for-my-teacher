@@ -9,7 +9,7 @@
 Pour plus de clarté, les instructions du TP se trouvent dans des fichiers distincts (un fichier par sujet), procédez dans l'ordre sinon, ça fonctionnera beaucoup moins bien !
 
 1. [A. Préparatifs](A-preparatifs.md)
-2. [B. La POO](B-poo.md)
-3. [C. Compiler avec Babel](./C-babel.md)
-4. [D. Modules](D-modules.md)
-5. [E. Pour aller plus loin : POO avancée](E-poo-avancee.md)
+2. [B. La fonction renderElement](B-renderelement.md)
+3. [C. Modules](C-modules.md)
+4. [D. Vite](D-vite.md)
+5. [E. Pour aller plus loin](E-plus-loin.md)
