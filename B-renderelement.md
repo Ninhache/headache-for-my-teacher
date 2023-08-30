@@ -88,7 +88,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	+ la fonction **prend en paramètre une chaîne nommée `tagName`**
 	+ elle **retourne une chaîne de caractères au format html**, qui représente une balise dont le type dépend du paramètre `tagName`.
 
-		Par exemple si `tagName` vaut `'div'` alors `render()` retournera la chaîne de caractères :
+		Par exemple si `tagName` vaut `'div'` alors `renderElement()` retournera la chaîne de caractères :
 		```js
 		'<div></div>'
 		```

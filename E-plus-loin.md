@@ -146,7 +146,7 @@ Cette fonction va nous permettre d'afficher plusieurs vignettes côte à côte g
 		const videoList = renderVideoList(data);
 		document.querySelector( '.page' ).innerHTML = videoList;
 		```
-	-  le code HTML retourné `render()` sera une balise `<div class="videoList">...</div>`
+	-  le code HTML retourné `renderVideoList()` sera une balise `<div class="videoList">...</div>`
 	-  pour chaque cellule du tableau `data`, `renderVideoList` appellera `renderVideoItem` et injectera le résultat à l'intérieur de la `<div class="videoList">...</div>`
 
 	> _**NB :** c'est le moment d'utiliser la méthode [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map)_ 🙂
