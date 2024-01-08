@@ -22,16 +22,18 @@ _**Allons y !**_
 Pour récupérer les fichiers du TP et travailler dessus, vous allez faire un "fork" de ce repository, qu'il ne vous restera ensuite plus qu'à cloner pour pouvoir faire vos commit tranquilles.
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
-	- Git : https://git-scm.com/
-	- Node.js (_version **current 20.x**_): https://nodejs.org/fr/
+	- **Git** : https://git-scm.com/
+	- **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
+		> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
-		**ATTENTION :** si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**
+		> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
+		>
+		> <img src="images/readme/node-install.png" >
+		>
+		> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
 
-		<img src="images/readme/node-install.png" >
-
-		Cette case permettra d'installer des dépendances utiles pour le serveur REST que l'on lancera dans un prochain TP (notamment python et les visual c++ build tools).
-
-	- VSCodium : https://vscodium.com/ (Si vous avez déjà vscode, ça fera très bien l'affaire !)
+	- **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
+		> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.3. VSCod[e/ium]](#a3-vscodeium)_) !_
 
 2. **Faites ensuite un fork du TP :**
 	- soit en cliquant sur le bouton `"Créer une divergence"` (_`"Fork"` sur la version anglaise de gitlab_)
