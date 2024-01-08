@@ -12,7 +12,7 @@
 ## A2.1. Lancement d'un serveur HTTP
 
 **Pour consulter notre appli web dans un navigateur, il nous faut un serveur http.** <br>
-On pourrait, pour cet exercice, utiliser n'importe quel serveur http (_apache, tomcat, etc._) mais je vous propose d'utiliser Node.js (_installé au point A.2._) et **[npx](https://docs.npmjs.com/cli/v8/commands/npx)** qui est une commande fournie automatiquement avec Node (_basée sur [npm - Node Package Manager](https://fr.wikipedia.org/wiki/Npm) - dont nous parlerons plus tard_).
+On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, tomcat, etc.) mais je vous propose d'utiliser Node.js (_installé au point A.1._) et **[npx](https://docs.npmjs.com/cli/v8/commands/npx)** qui est une commande fournie automatiquement avec Node (_basée sur [npm : Node Package Manager](https://fr.wikipedia.org/wiki/Npm) dont nous parlerons plus tard_).
 
 1. **Tout d'abord, ouvrez un terminal directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (_ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`_).
 
@@ -39,26 +39,26 @@ On pourrait, pour cet exercice, utiliser n'importe quel serveur http (_apache, t
 
 **Ce repo est fourni avec un fichier `src/main.js` qu'il va falloir intégrer dans la page html.**
 
-Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>P</kbd> : tapez simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
+Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>P</kbd>, tapez ensuite simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
 
 **Incluez ensuite le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`.
 
-Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans une page HTML :
-- **en "inline"** c'est à dire directement dans les attributs d'une balise. Dans l'exemple ci-dessous, le code JS s'exécutera lorsque l'utilisateur cliquera sur le lien :
-	```html
-	<a href="#" onclick="alert('Welcome to Albuquerque');return false;">
-		BB
-	</a>
-	```
-- **dans une balise `<script>`.** Le code s'exécute alors au chargement de la page, au moment où le navigateur arrive à cette ligne (le navigateur parse le document html de haut en bas):
-	```html
-	<script>alert('Welcome to Albuquerque');</script>
-	```
-- **dans une balise `<script>` avec un attribut `src`**. Dans ce cas le code JS peut alors être externalisé dans un fichier distinct. Le code s'exécute lorsque le fichier est chargé :
-	```html
-	<script src="welcome.js"></script>
-	```
-**C'est cette dernière technique que nous emploierons car elle permet de bien séparer les responsabilités de notre appli** (*HTML et JS séparés*).
+> _**NB :** Pour rappel, il existe plusieurs manières d'intégrer du code JavaScript dans une page HTML :_
+> - _**en "inline"** c'est à dire directement dans les attributs d'une balise. Dans l'exemple ci-dessous, le code JS s'exécutera lorsque l'utilisateur cliquera sur le lien :_
+>	```html
+>	<a href="#" onclick="alert('Welcome to Albuquerque');return false;">
+>		BB
+>	</a>
+>	```
+> - _**dans une balise `<script>`.** Le code s'exécute alors au chargement de la page, au moment où le navigateur arrive à cette ligne (le navigateur parse le document html de haut en bas):_
+> 	```html
+> 	<script>alert('Welcome to Albuquerque');</script>
+> 	```
+> - _**dans une balise `<script>` avec un attribut `src`**. Dans ce cas le code JS peut alors être externalisé dans un fichier distinct. Le code s'exécute lorsque le fichier est chargé :_
+> 	```html
+> 	<script src="welcome.js"></script>
+> 	```
+> **C'est cette dernière technique que nous emploierons car elle permet de bien séparer les responsabilités de notre appli** (*HTML et JS séparés*).
 
 **Attention :** Pour éviter que le chargement du fichier JS ne bloque le chargement de la page HTML (comportement par défaut), il existe 2 solutions :
 - placer la balise `<script>` en toute fin de fichier html, juste **avant** la balise fermante `</body>`
