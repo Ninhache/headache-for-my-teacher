@@ -28,6 +28,8 @@ body {
 	/* height: 100%; */
 	padding: 0;
 	background: #f1f1f1;
+	position: relative;
+	z-index: -3;
 }
 body {
 	min-height: 100vh;
