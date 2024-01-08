@@ -10,7 +10,7 @@
 
 ## A.1. À propos de ce repo
 
-**Ce repo contient un ensemble de fichiers qui vous seront utiles pour la réalisation des exercices de cette formation.**
+**Ce repo contient un ensemble de fichiers qui vous seront utiles pour la réalisation des exercices de ce TP.**
 
 Il contient notamment des fichiers html, css et des assets graphiques (images et vidéos) qui vous permettront de vous concentrer sur le JS sans trop vous soucier de l'apparence de ce que vous codez tout en ayant **quand même** quelque chose de présentable visuellement 😎
 
@@ -56,7 +56,7 @@ Pour récupérer les fichiers du TP et travailler dessus, vous allez faire un "f
 
 ## A.3. VSCod\[e/ium\]
 
-_**Pour développer en JS, vous utilisez déjà sans doute un éditeur adapté au JS moderne. Si vous ne l'avez pas encore testé, je ne peux que vous recommander d'utiliser Visual Studio Code / VSCodium au moins pour la durée de cette formation.**_
+_**Pour développer en JS, vous utilisez déjà sans doute un éditeur adapté au JS moderne. Si vous ne l'avez pas encore testé, je ne peux que vous recommander d'utiliser Visual Studio Code / VSCodium au moins pour la durée de ce cours.**_
 
 <img src="images/readme/vscode-ium.jpg" />
 

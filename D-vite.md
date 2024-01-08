@@ -136,4 +136,4 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 	<img src="images/readme/npm-start.gif" />
 
 ## Étape suivante <!-- omit in toc -->
-Bref, maintenant que nos outils de dev sont en place, on est parés pour la suite de la formation, mais s'il vous reste du temps, vous pouvez vous attaquer à la dernière partie avec quelques exercices pour améliorer notre fonction `renderElement` : [E. Pour aller plus loin](./E-plus-loin.md)
+Bref, maintenant que nos outils de dev sont en place, on est parés pour les prochains TP, mais s'il vous reste du temps, vous pouvez vous attaquer à la dernière partie avec quelques exercices pour améliorer notre fonction `renderElement` : [E. Pour aller plus loin](./E-plus-loin.md)
