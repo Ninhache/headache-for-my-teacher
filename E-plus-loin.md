@@ -2,7 +2,7 @@
 
 # E. Pour aller plus loin <!-- omit in toc -->
 
-_**Si vous êtes arrivé à cette partie du TP bravo* ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
+_**Si vous êtes arrivé à cette partie du TP bravo ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
 
 Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtrise des syntaxes JS et d'améliorer un peu notre appli Reactube.
 
