@@ -1,40 +1,59 @@
+:root {
+	--img-height:220px;
+}
+
 .videoList {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	/* justify-content: space-between; */
+	justify-content: space-between;
 }
 .videoList > a {
 	position: relative;
-	width: 32%;
-	/* max-width: 33%; */
+	width: 32.5%;
 	min-height: 100px;
-	/* flex-grow: 1; */
-	/* padding: 5px 6px 30px; */
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	text-decoration: none;
 	overflow: hidden;
-	margin: 0 5px 30px;
+	margin: 0 0 30px;
 }
 .videoList > a:hover{
+}
+.videoList > img {
+	max-width: 100%;
 }
 .videoList > a img {
 	min-width: 100%;
 	width: 100%;
-	height: 220px;
+	height: var(--img-height);
 	position: relative;
 	justify-content: center;
 	object-fit: cover;
 	background-image: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
 	transform: translateZ(0) scale(1);
-	transform-origin: bottom;
-	transition: all .1s ease-in;
+	transition: transform .1s ease-in, height .1s ease-in;
+}
+.videoList > a:before {
+	content:'';
+	position:absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: var(--img-height);
+	transition: height .1s ease-in;
+	z-index: 1;
+	background: radial-gradient(200% 200% at 100% 100%, transparent 0, transparent 48%, #f1f1f1 51%) 0 0 / 12px 12px,
+	radial-gradient(200% 200% at 0% 100%, transparent 0, transparent 48%, #f1f1f1 51%) 100% 0 / 12px 12px,
+	radial-gradient(200% 200% at 100% 0%, transparent 0, transparent 48%, #f1f1f1 51%) 0 100% / 12px 12px,
+	radial-gradient(200% 200% at 0% 0%, transparent 0, transparent 48%, #f1f1f1 51%) 100% 100% / 12px 12px;
+	background-repeat: no-repeat;
+	outline: #f1f1f1 solid 100px; /* couvre débordement de l'image en bas */
 }
 .videoList > a:hover img {
-	transition: all 5s ease-out;
-	transform: translateZ(0) scale(1.05);
+	transition: transform 5s ease-out, height .1s ease-out;
+	transform: translateZ(0) scale(1.25) rotate(-2deg);
 }
 .videoList > a:nth-child(7n+2) img {
 	background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
@@ -103,16 +122,17 @@
 	flex-direction: column;
 	position: relative;
 	color: black;
+	z-index: 2;
 }
-/* .videoList > a:hover .infos {
-	background-color: #1b1b1b;
-} */
 .videoList > a .infos h4 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-weight: bold;
+	font-weight: 500;
 	color: black;
 	font-size: 16px;
+}
+.videoList > a .infos h4::first-letter {
+	text-transform: capitalize;
 }
 .videoList > a .infos p {
 	color: #606060;
@@ -126,57 +146,59 @@
 
 .videoList > a:after {
 	content: '';
-	border-radius: 200px;
-	border: 1px #fff8 solid;
-	background-color: #0002;
+	border-radius: 30%;
+	/* border: 1.5px #fff8 solid; */
+	background-color: #0003;
 	color: black;
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 45px;
 	background-image: url('../images/play.svg');
-	background-size: 12px;
+	background-size: 16px;
 	background-repeat: no-repeat;
-	background-position: 55% center;
+	background-position: 52% center;
+	backdrop-filter: blur(3px);
 	display: block;
 	position: absolute;
 	z-index: 10;
-	top: 30%;
+	top: calc(var(--img-height) / 2);
 	left: 50%;
 	transform: translate(-50%, -50%) scale(1);
 	transition-property: all;
-	transition-duration: .1s;
+	transition-duration: .15s;
 	transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); /* easeinout expo */
 }
 .videoList > a:hover:after {
 	opacity: 0;
+	transform: translate(-50%, -50%) scale(1.1);
 }
 
 
 @media (max-width: 1190px){
+	:root {
+		--img-height: 190px;
+	}
 	h1,
 	.videoList {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	.videoList > a img {
-		height: 190px;
-	}
 }
 @media (max-width: 1000px){
-	.videoList > a {
+	:root {
+		--img-height: 150px;
 	}
-	.videoList > a img {
-		height: 150px;
+	.videoList > a {
 	}
 }
 @media (max-width: 850px){
 	.videoList > a {
-		width: 48%;
-	}
-	.videoList > a img {
-		height: 150px;
+		width: 48.5%;
 	}
 }
 @media (max-width: 675px){
+	:root {
+		--img-height: 180px;
+	}
 	h1,
 	.videoList {
 		padding-left: 50px;
@@ -185,20 +207,14 @@
 	.videoList > a {
 		width: 100%;
 	}
-	.videoList > a img {
-		height: 180px;
-	}
 }
 @media (max-width: 480px){
+	:root {
+		--img-height: 150px;
+	}
 	h1,
 	.videoList {
-		padding-left: 20px 20px;
-		padding-right: 20px 20px;
-	}
-	.videoList > a {
-		width: 100%;
-	}
-	.videoList > a img {
-		height: 180px;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

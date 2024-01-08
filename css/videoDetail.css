@@ -1,90 +1,149 @@
+.videoDetail {
+	width: 960px;
+}
 .videoDetail video {
+	border-radius: 12px;
+	object-fit: cover;
+	height: 45vw;
+	min-height: 200px;
+	max-height: 420px;
 }
 .videoDetail .backButton,
-.videoDetail > button {
-	background: #eee;
+button {
+	background: #e3e3e3;
 	border: none;
 	border-radius: 2px;
-	color: #999999;
-	font-size: 16px;
-	font-family: Oswald;
-	padding: 1px 6px;
+	color: black;
+	font-size: 14px;
+	font-family: Roboto;
+	font-weight: 500;
+	padding: 9px 18px 8px;
+	border-radius: 20px;
+	transition: all .05s ease-out, box-shadow .6s linear, border .6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+	margin:7px 7px 0 0;
+	border: 1px transparent solid;
 }
 .videoDetail .backButton:hover,
-.videoDetail > button:hover {
+button:hover {
+	background: #d2d2d2;
 	cursor: pointer;
-	color: #fff;
-	background: #c00;
+}
+button:active {
+	background: #c5c5c5;
+	cursor: pointer;
+	transition-duration: 0.05s, 0.05s;
+	box-shadow: 0 0 10px #c5c5c5 inset;
+	border-color: #c5c5c5;
 }
 .videoDetail .backButton {
-	margin-bottom: 5px;
+	margin: 0 0 5px;
 	display: inline-block;
 	text-decoration: none;
+	background: none;
+	transform: translateX(-12px);
 }
 .videoDetail .backButton:hover {
-	background: #333;
+	transform: translateX(-14px);
 }
 .videoDetail h1 {
 	padding: 30px 0 20px;
 	margin: 0;
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 }
 .videoDetail header {
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-wrap: wrap;
 }
 .videoDetail header h1 {
-	border-bottom: none;
+	/* border-bottom: none; */
 	padding-bottom: 0;
 }
 .videoDetail header .likesContainer {
-	border-bottom: solid 2px #999;
-	align-self: flex-end;
+	/* border-bottom: solid 2px #999; */
+	/* align-self: flex-end; */
+	transform: translateY(3px);
 }
 .videoDetail header .likesContainer button {
-	background: none;
-	border: none;
-	cursor: pointer;
-	color: #999;
-	font-weight: bold;
-	padding: 5px 10px;
+	/* background: none; */
+	/* border: none; */
+	/* cursor: pointer; */
+	/* color: #999; */
+	/* font-weight: bold; */
+	/* padding: 5px 10px; */
 	display: inline-flex;
 	align-items: center;
-	font-size: 14px;
+	margin-right: 0;
+	padding: 7px 12px 8px;
+	/* font-size: 14px; */
 }
-.videoDetail header .likesContainer button:hover {
-	opacity: .7;
+.videoDetail header .likesContainer button.like {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	position: relative;
 }
-
+.videoDetail header .likesContainer button.like:after {
+	content: '';
+	position: absolute;
+	top: 6px;
+	bottom: 6px;
+	right: -1.5px;
+	width: 1px;
+	background:#ccc;
+}
+.videoDetail header .likesContainer button.dislike {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-left: 8px;
+}
 .videoDetail header .likesContainer button:before {
 	content: '';
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-image: url('../images/like.svg');
 	margin-right: 10px;
 }
+.videoDetail header .likesContainer button:active:before {
+	animation: like .2s ease-in-out infinite;
+	animation-fill-mode: both;
+}
+@keyframes like {
+	50% { transform: translateY(-8px) scale(1.2) rotate(-10deg); }
+	60% { transform: translateY(0) scale(1) rotate(-0deg); }
+}
 .videoDetail header .likesContainer button.dislike:before {
 	background-image: url('../images/dislike.svg');
+	transform: translateY(1px);
+}
+.videoDetail header .likesContainer button.dislike:active:before {
+	animation-name: dislike;
+}
+@keyframes dislike {
+	20% { transform: translateY(10px) scale(1.1) rotate(-20deg);; }
+	25% { transform: translateY(1px) scale(1) rotate(-10deg); }
 }
 .videoDetail > p {
-	padding: 20px 0;
-	padding-left: 70px;
+	margin: 20px 0 0 70px;
 	position: relative;
 	font-size: 14px;
 	min-height: 100px;
-	margin: 0;
-	max-width: 600px;
+	padding: 12px;
+	border-radius: 12px;
+	background-color: #e3e3e3;
 }
 .videoDetail > p:before {
 	content:'';
 	position: absolute;
-	top: 15px;
-	left: 0;
+	top: 0;
+	left: -70px;
 	width:50px;
 	height:50px;
 	border-radius: 50%;
@@ -96,13 +155,13 @@
 }
 
 .commentList {
-	border-top: 1px solid #ccc;
+	/* border-top: 1px solid #ccc; */
 	margin-top: 30px;
 	padding-top: 10px;
 }
 .commentList h2 {
 	color: #030303;
-	font-weight: normal;
+	font-size: 20px;
 }
 
 .commentRenderer,
@@ -111,7 +170,9 @@
 	flex-direction: column;
 	position: relative;
 	padding-left: 60px;
-	margin-bottom: 30px;
+}
+.commentRenderer {
+	margin-bottom: 25px;
 }
 .commentRenderer:before,
 .commentForm:before {
@@ -131,40 +192,43 @@
 .commentForm textarea {
 	background: none;
 	border: none;
-	border-bottom: 1px solid #ccc;
-	font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: Roboto, Arial, sans-serif;
 	margin-bottom: 10px;
+	font-size: 15px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+	padding: 6px;
+}
+.commentForm textarea:disabled {
+	border-radius: 12px;
+	background-color: #ddd;
+	border-bottom: none;
+	color: #888;
 }
 .commentForm button {
 	align-self: flex-end;
-	padding: 7px 17px;
-	border: none;
-	border: 1px solid #065fd4;
+	margin-right: 0;
+	background-color: #0f0f0f;
+	color: white;
+	transition-duration: .05s, .001s;
+}
+button:hover:disabled,
+button:disabled {
+	color: #ccc;
+	cursor: not-allowed;
 	background-color: transparent;
-	color: #065fd4;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: .05em;
-	font-family: Oswald;
-	border-radius: 2px;
-	transition: all .1s ease;
-}
-.commentForm button:disabled {
-	background-color: #ddd;
-	border-color: #ccc;
-	color: #555;
-}
-.commentForm textarea:disabled {
-	background-color: #ddd;
+	outline: 1px currentColor solid;
 }
 .commentForm button:focus:not(:disabled),
 .commentForm button:hover:not(:disabled) {
 	cursor: pointer;
 	background-color: #065fd4;
-	color: white;
 }
-
+.commentForm button:active:not(:disabled) {
+	background: #09499e;
+	box-shadow: 0 0 10px #09499e inset;
+	border-color: #09499e;
+}
 .commentRenderer:before {
 	top: 0;
 	background-image: url("https://source.unsplash.com/random/40x40?r=1"), linear-gradient(-20deg, #58a7d5 0%, #3f57df 100%);
