@@ -10,7 +10,7 @@
 
 ## A.1. À propos de ce repo
 
-**Ce repo contient un ensemble de fichiers qui vous seront utiles pour la réalisation des exercices de ce TP.**
+**Ce repo contient un ensemble de fichiers qui vous seront utiles pour la réalisation de ce TP.**
 
 Il contient notamment des fichiers html, css et des assets graphiques (images et vidéos) qui vous permettront de vous concentrer sur le JS sans trop vous soucier de l'apparence de ce que vous codez tout en ayant **quand même** quelque chose de présentable visuellement 😎
 
