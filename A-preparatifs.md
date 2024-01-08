@@ -23,7 +23,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
 	- Git : https://git-scm.com/
-	- Node.js (_version **current 20.x**_): https://nodejs.org/fr/download/current
+	- Node.js (_version **current 21.x**_): https://nodejs.org/fr/download/current
 
 		**ATTENTION :** si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**
 
