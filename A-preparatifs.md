@@ -19,7 +19,7 @@ _**Allons y !**_
 
 ## A.2. Récupération des fichiers
 
-La solution la plus simple pour récupérer les fichiers du TP consiste à cloner ce repository à l'aide de la commande `git clone` :
+Pour récupérer les fichiers du TP et travailler dessus, vous allez faire un "fork" de ce repository, qu'il ne vous restera ensuite plus qu'à cloner pour pouvoir faire vos commit tranquilles.
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
 	- Git : https://git-scm.com/
@@ -33,16 +33,24 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 	- VSCodium : https://vscodium.com/ (Si vous avez déjà vscode, ça fera très bien l'affaire !)
 
-2. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
+2. **Faites ensuite un fork du TP :**
+	- soit en cliquant sur le bouton `"Créer une divergence"` (_`"Fork"` sur la version anglaise de gitlab_)
+	- soit en vous rendant directement sur https://framagit.org/cours-react/tp1/-/forks/new
 
-3. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
+	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** et vérifiez que le repo est **bien en mode "privé"**
+
+3. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :** dans le menu de gauche, cliquez sur `"Manage"` &gt; `"Members"` puis sur le bouton `"Invite members"` (_ou_ `"Gestion"` &gt; `"Membres"` : `"Inviter des membres"`_sur la version française de Gitlab_), et entrez `@tf` comme nom d'utilisateur, et donc `"reporter"` comme rôle.
+
+4. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
+
+5. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/cours-react/tp1.git ~/tps-react/tp1
+	git clone https://framagit.org/<votre-username>/tp1.git ~/tps-react/tp1
 	```
 	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
+	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Edit Profile &gt; Password](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
 
 	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:cours-react/tp1.git`_
 
