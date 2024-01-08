@@ -3,12 +3,40 @@
 # A. Préparatifs <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [A.1. À propos de ce repo](#a1-à-propos-de-ce-repo)
-- [A.2. Récupération des fichiers](#a2-récupération-des-fichiers)
-- [A.3. VSCod\[e/ium\]](#a3-vscodeium)
-- [A.4. Ouvrir le projet dans VSCodium](#a4-ouvrir-le-projet-dans-vscodium)
+- [A.1. Installations](#a1-installations)
+- [A.2. À propos de ce repo](#a2-à-propos-de-ce-repo)
+- [A.3. Récupération des fichiers](#a3-récupération-des-fichiers)
+- [A.4. VSCod\[e/ium\]](#a4-vscodeium)
+- [A.5. Ouvrir le projet dans VSCodium](#a5-ouvrir-le-projet-dans-vscodium)
 
-## A.1. À propos de ce repo
+
+## A.1. Installations
+**Avant de démarrer le TP il va vous falloir faire quelques installs et configurations.** Selon que vous utilisez une machine de l'Université ou votre propre ordinateur la situation n'est pas la même :
+
+### Si vous êtes sur une machine des salles TP de l'IUT <!-- omit in toc -->
+Dans ce cas, un certain nombre de logiciels sont déjà pré-installés (notamment Git et VSCode) mais vous aurez quand même besoin :
+- de configurer le **proxy** de l'Université
+- d'installer une version de **NodeJS** plus récente que celle fournie sur les machines
+
+Suivez donc [ce tuto spécifique aux machines des salles TP de l'IUT](A-preparatifs-linux.md) puis revenez suivre la suite du TP ici.
+
+### Si vous utilisez votre propre machine <!-- omit in toc -->
+Dans ce cas il vous faudra installer :
+- **Git** : https://git-scm.com/
+- **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
+	> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
+
+	> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
+	>
+	> <img src="images/readme/node-install.png" >
+	>
+	> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
+
+- **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
+	> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.3. VSCod[e/ium]](#a3-vscodeium)_) !_
+
+
+## A.2. À propos de ce repo
 
 **Ce repo contient un ensemble de fichiers qui vous seront utiles pour la réalisation de ce TP.**
 
@@ -17,46 +45,37 @@ Il contient notamment des fichiers html, css et des assets graphiques (images et
 La première étape est donc de récupérer (_via git_) les fichiers du TP.<br>
 _**Allons y !**_
 
-## A.2. Récupération des fichiers
+## A.3. Récupération des fichiers
 
-Pour récupérer les fichiers du TP et travailler dessus, vous allez faire un "fork" de ce repository, qu'il ne vous restera ensuite plus qu'à cloner pour pouvoir faire vos commit tranquilles.
+**La solution la plus simple pour récupérer les fichiers du TP consiste à cloner ce repository à l'aide de git :**
 
-1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
-	- **Git** : https://git-scm.com/
-	- **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
-		> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
-
-		> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
-		>
-		> <img src="images/readme/node-install.png" >
-		>
-		> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
-
-	- **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
-		> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.3. VSCod[e/ium]](#a3-vscodeium)_) !_
-
-2. **Faites ensuite un fork du TP :**
+1. **Commencez par faire un fork du TP :**
 	- soit en cliquant sur le bouton `"Créer une divergence"` (_`"Fork"` sur la version anglaise de gitlab_)
-	- soit en vous rendant directement sur https://framagit.org/cours-react/tp1/-/forks/new
+	- soit en vous rendant directement sur https://gitlab.univ-lille.fr/react/tp1/-/forks/new
 
-	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** et vérifiez que le repo est **bien en mode "privé"**
+	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** (`namespace`) \
+	et vérifiez que le repo est **bien en mode "private"** (`Visibility Level`)
 
-3. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :** dans le menu de gauche, cliquez sur `"Manage"` &gt; `"Members"` puis sur le bouton `"Invite members"` (_ou_ `"Gestion"` &gt; `"Membres"` : `"Inviter des membres"`_sur la version française de Gitlab_), et entrez `@tf` comme nom d'utilisateur, et donc `"reporter"` comme rôle.
+2. **Ajoutez votre encadrant de TP en tant que "reporter" pour qu'il ait accès à votre code :**
+	- dans le menu de gauche, cliquez sur **`Manage`** &gt; **`Members`** (`Gestion` &gt; `Membres` _si vous êtes sur la VF de gitlab_)
+	- cliquez sur le bouton en haut à droite **`"Invite members"`** (`Inviter des membres`)
+	- entrez comme **nom d'utilisateur** celui de votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`)
+	- ... et `"reporter"` comme **rôle**.
 
-4. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
+3. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
 
-5. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** :
+4. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** (_dans mon exemple /home/thomas/tps-react/tp1_):
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/<votre-username>/tp1.git ~/tps-react/tp1
+	git clone https://gitlab.univ-lille.fr/<votre-username>/tp1.git ~/tps-react/tp1
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-js/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Edit Profile &gt; Password](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
+	> _**NB2 :** si ce n'est pas déjà fait, il faut que vous renseigniez un mot de passe dans votre compte gitlab ([`Preferences` > `Password`](https://gitlab.univ-lille.fr/-/profile/password/edit)) pour pouvoir cloner en http_
 
-	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:cours-react/tp1.git`_
+	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur gitlab](https://gitlab.univ-lille.fr/-/profile/keys) et clonez à partir de cette URL : `git@gitlab-ssh.univ-lille.fr:votre-username/tp1.git`_
 
-## A.3. VSCod\[e/ium\]
+## A.4. VSCod\[e/ium\]
 
 _**Pour développer en JS, vous utilisez déjà sans doute un éditeur adapté au JS moderne. Si vous ne l'avez pas encore testé, je ne peux que vous recommander d'utiliser Visual Studio Code / VSCodium au moins pour la durée de ce cours.**_
 
@@ -77,7 +96,7 @@ Malheureusement des questions de licence liées à Microsoft [plus ou moins obsc
 
 	On configurera cette extension dans le prochain TP.
 
-## A.4. Ouvrir le projet dans VSCodium
+## A.5. Ouvrir le projet dans VSCodium
 
 _**Pour travailler efficacement avec vscodium, je vous recommande d'ouvrir le DOSSIER de votre projet plutôt que d'ouvrir les fichiers un à un. Cela vous permettra notamment de passer plus rapidement de l'un à l'autre.**_
 
