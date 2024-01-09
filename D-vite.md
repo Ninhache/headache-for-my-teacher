@@ -50,7 +50,7 @@ _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourn
 
 
 ## D.2. Lancer le serveur de développement
-1. **Vous pouvez maintenant lancer le serveur de développement de vite à l'aide de la commande** :
+1. **Vous pouvez maintenant lancer le serveur de développement de Vite à l'aide de la commande** :
 	```bash
 	./node_modules/.bin/vite --port 8000
 	```

@@ -28,7 +28,7 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	nvm ls
 	```
 	Si la commande fonctionne, alors vous pouvez passer à l'étape suivante.
-	Sinon, si elle retourne une erreur, c'est à priori que `nvm` n'est pas installé, donc **lancez l'install de `nvm`** :
+	Sinon, si elle retourne une erreur, c'est a priori que `nvm` n'est pas installé, donc **lancez l'install de `nvm`** :
 	```bash
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 	```
@@ -57,7 +57,7 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	doit retourner `v21.5.0`
 
 ## 3. Configurer le proxy (_optionnel_)
-**Cette étape est à priori optionnelle, car par défaut node doit utiliser les variables `http_proxy` et `https_proxy` configurées à l'étape 1.**
+**Cette étape est a priori optionnelle, car par défaut node doit utiliser les variables `http_proxy` et `https_proxy` configurées à l'étape 1.**
 
 Si jamais vous rencontrez des soucis lors de l'utilisation de `npm` ou `npx` dans la suite du TP sachez que vous pouvez forcer l'utilisation du proxy avec la commande suivante :
 ```bash
