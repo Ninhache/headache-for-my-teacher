@@ -26,7 +26,7 @@ Dans ce cas il vous faudra installer :
 - **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
 	> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
-	> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
+	> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous Windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
 	>
 	> <img src="images/readme/node-install.png" >
 	>
@@ -43,7 +43,7 @@ Dans ce cas il vous faudra installer :
 Il contient notamment des fichiers html, css et des assets graphiques (images et vidéos) qui vous permettront de vous concentrer sur le JS sans trop vous soucier de l'apparence de ce que vous codez tout en ayant **quand même** quelque chose de présentable visuellement 😎
 
 La première étape est donc de récupérer (_via git_) les fichiers du TP.<br>
-_**Allons y !**_
+_**Allons-y !**_
 
 ## A.3. Récupération des fichiers
 
@@ -62,14 +62,14 @@ _**Allons y !**_
 	- entrez comme **nom d'utilisateur** celui de votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`)
 	- ... et `"reporter"` comme **rôle**.
 
-3. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
+3. **Ouvrez un terminal** *(si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git)*
 
 4. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** (_dans mon exemple /home/thomas/tps-react/tp1_):
 	```bash
 	mkdir ~/tps-react
 	git clone https://gitlab.univ-lille.fr/<votre-username>/tp1.git ~/tps-react/tp1
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-js/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-js/tp1`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** si ce n'est pas déjà fait, il faut que vous renseigniez un mot de passe dans votre compte gitlab ([`Preferences` > `Password`](https://gitlab.univ-lille.fr/-/profile/password/edit)) pour pouvoir cloner en http_
 

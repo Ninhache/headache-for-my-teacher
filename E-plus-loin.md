@@ -86,7 +86,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 ## E.3. la fonction renderVideoList
 
-_**Après cette petite fonction `renderVideoItem`, attaquons nous à un cas un peu plus complexe : celui de la fonction `renderVideoList`.**_
+_**Après cette petite fonction `renderVideoItem`, attaquons-nous à un cas un peu plus complexe : celui de la fonction `renderVideoList`.**_
 
 Cette fonction va nous permettre d'afficher plusieurs vignettes côte à côte grâce à la fonction `renderVideoItem` créée précédemment.
 
@@ -140,7 +140,7 @@ Cette fonction va nous permettre d'afficher plusieurs vignettes côte à côte g
 2. **Dans le fichier `index.html`, changez le nom de la classe CSS de la balise `<div class="videoList">` en `<div class="page">`**. C'est `renderVideoList` qui sera chargée de créer, à l'intérieur de `<div class="page">`, la `<div class="videoList">`.
 
 3. **Créez enfin la fonction `renderVideoList` dans le fichier `src/renderVideoList.js`** :
-	- instanciez la dans `src/main.js` comme ceci :
+	- instanciez-la dans `src/main.js` comme ceci :
 		```js
 		// `data` est le tableau défini dans `src/data.js`
 		const videoList = renderVideoList(data);
