@@ -2,24 +2,9 @@
 
 # Installations et configuration Linux<!-- omit in toc -->
 ### (instructions spéciales Université de Lille)<!-- omit in toc -->
-- [1. Configuration du proxy](#1-configuration-du-proxy)
-- [2. Installation et configuration de Node](#2-installation-et-configuration-de-node)
-- [3. Configurer le proxy (_optionnel_)](#3-configurer-le-proxy-optionnel)
 
-## 1. Configuration du proxy
-**Les machines des salles de TP sont connectées à internet à travers le proxy de l'Université de Lille.** Pour que les outils qu'on va utiliser soient capables de se connecter à internet, on va utiliser deux **[variables d'environnement](https://fr.wikipedia.org/wiki/Variable_d'environnement)** :
+## Installation et configuration de Node
 
-1. **Commencez par ajouter le proxy à votre fichier `~/.bashrc`** -_si ce n'est pas déjà fait_- en y ajoutant les lignes suivantes :
-	```bash
-	export http_proxy=http://cache.univ-lille.fr:3128
-	export https_proxy=http://cache.univ-lille.fr:3128
-	```
-2. **Une fois le fichier sauvegardé, appliquez les modifications** pour prendre en compte les nouvelles variables d'environnement :
-	```bash
-	source ~/.bashrc
-	```
-
-## 2. Installation et configuration de Node
 Les machines des salles TP de l'IUT disposent déjà de Node mais dans une version trop ancienne pour être utilisée dans ce cours.
 
 Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, dans votre session : **on va pour cela utiliser [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm).**
@@ -36,7 +21,7 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	```bash
 	source ~/.bashrc
 	```
-3. **Téléchargez et installez ensuite la version de Node que l'on souhaite** (_ici la 21_) grâce à nvm :
+2. **Téléchargez et installez ensuite la version de Node que l'on souhaite** (_ici la 21_) grâce à nvm :
 	```bash
 	nvm install 21
 	```
@@ -50,19 +35,11 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	> ```bash
 	> source ~/.bashrc
 	> ```
-4. **Vérifiez ensuite que la version de node est correcte** :
+3. **Vérifiez ensuite que la version de node est correcte** :
 	```bash
 	node -v
 	```
 	doit retourner `v21.5.0`
-
-## 3. Configurer le proxy (_optionnel_)
-**Cette étape est a priori optionnelle, car par défaut node doit utiliser les variables `http_proxy` et `https_proxy` configurées à l'étape 1.**
-
-Si jamais vous rencontrez des soucis lors de l'utilisation de `npm` ou `npx` dans la suite du TP sachez que vous pouvez forcer l'utilisation du proxy avec la commande suivante :
-```bash
-npm config set proxy http://cache.univ-lille.fr:3128/
-```
 
 
 ## Étape suivante <!-- omit in toc -->
