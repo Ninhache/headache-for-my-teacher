@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# D. Les modules <!-- omit in toc -->
+# C. Les modules <!-- omit in toc -->
 
 _**Notre application Reactube a bien progressé.**_
 
@@ -9,10 +9,10 @@ Malheureusement tout notre code réside dans le seul fichier `main.js` : **ça c
 **L'objectif de ce chapitre va être de nous permettre de mieux organiser notre code en le répartissant dans plusieurs fichiers grâce aux modules ES6.**
 
 ## Sommaire <!-- omit in toc -->
-- [D.1. Rappels](#d1-rappels)
-- [D.2. Mise en oeuvre](#d2-mise-en-oeuvre)
+- [C.1. Rappels](#c1-rappels)
+- [C.2. Mise en oeuvre](#c2-mise-en-oeuvre)
 
-## D.1. Rappels
+## C.1. Rappels
 **Comme vu en cours, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier** (_plutôt que d'avoir à maintenir une longue liste de balises `<script>` dans le fichier html_).
 
 Par exemple, si l'on a deux fichiers `main.js` et `vehicle.js`, on peut partager une variable de l'un à l'autre grâce aux instructions `import` et `export` :
@@ -58,7 +58,7 @@ Dans un premier temps nous ferons de toute façon abstraction de ces questions d
 
 Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec les vieux navigateurs grâce à un bundler.
 
-## D.2. Mise en oeuvre
+## C.2. Mise en oeuvre
 1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
 	```html
 	<script type="module" src="src/main.js"></script>
