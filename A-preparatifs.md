@@ -22,27 +22,29 @@ _**Allons y !**_
 La solution la plus simple pour récupérer les fichiers du TP consiste à cloner ce repository à l'aide de la commande `git clone` :
 
 1. **Si ce n'est pas déjà fait, installez les logiciels suivants :**
-	- Git : https://git-scm.com/
-	- Node.js (_version **current 21.x**_): https://nodejs.org/fr/download/current
+	- **Git** : https://git-scm.com/
+	- **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
+		> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
-		**ATTENTION :** si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**
+		> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
+		>
+		> <img src="images/readme/node-install.png" >
+		>
+		> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
 
-		<img src="images/readme/node-install.png" >
+	- **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
+		> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.3. VSCod[e/ium]](#a3-vscodeium)_) !_
 
-		Cette case permettra d'installer des dépendances utiles pour le serveur REST que l'on lancera plus tard dans ce TP (notamment python et les visual c++ build tools).
+2. **Ouvrez un terminal** *(si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git)*
 
-	- VSCodium : https://vscodium.com/ (Si vous avez déjà vscode, ça fera très bien l'affaire !)
-
-2. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
-
-3. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
+3. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp0.git ~/tps-react/tp0
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp0`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Paramètres > Mot de passe](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
+	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Edit Profile &gt; Password](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
 
 	> _**NB3 :** si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp0.git`_
 
@@ -59,7 +61,7 @@ Malheureusement des questions de licence liées à Microsoft [plus ou moins obsc
 > _**NB :** Si vous avez déjà VSCode et que vous ne souhaitez pas faire la bascule vers VSCodium, pas de soucis, comme les deux sont strictement identiques en terme de fonctionnalités (hormis le store d'extension qui diffère), les TP fonctionneront de la même manière avec vscode !_
 
 
-1. **Ouvrez le panneau des extensions de VSCod[e/ium]** à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>X</kbd>
+1. **Ouvrez le panneau des extensions de VSCod\[e/ium\]** à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>X</kbd>
 
 1. **Installez l'extension `Prettier - Code formatter`** (_esbenp.prettier-vscode_)
 
