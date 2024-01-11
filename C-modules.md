@@ -6,7 +6,7 @@ _**Notre application Reactube a bien progressé.**_
 
 Malheureusement tout notre code réside dans le seul fichier `main.js` : **ça commence par conséquent à être un peu le "bazar" puisque tout est mélangé.**
 
-**L'objectif de ce chapitre va être de nous permettre de mieux organiser notre code en le répartissant dans plusieurs fichiers grâces aux modules ES6.**
+**L'objectif de ce chapitre va être de nous permettre de mieux organiser notre code en le répartissant dans plusieurs fichiers grâce aux modules ES6.**
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. Rappels](#c1-rappels)
@@ -27,7 +27,7 @@ import vehicle from './vehicle.js';
 console.log( vehicle ); // 'The RV'
 ```
 
-Dans l'exemple ci-dessus on utilise un **export par défaut** (_`export default ...`_) mais il existe un deuxième type d'export : les **exports nommés** (_`named exports` en anglais_). \
+Dans l'exemple ci-dessus, on utilise un **export par défaut** (_`export default ...`_) mais il existe un deuxième type d'export : les **exports nommés** (_`named exports` en anglais_). \
 Si l'on réécrit l'exemple ci-dessus avec un export nommé cela donnera :
 ```js
 // vehicle.js
@@ -79,7 +79,7 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 
 4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module ES6 distinct `src/renderElement.js`.**
 
-	> _**NB1 :** Rappelez vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
+	> _**NB1 :** Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
 
 	> _**NB2 :** Exporter **par défaut** une constante sur la même ligne que sa création est interdit (cf. la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)):_
 	> ```js

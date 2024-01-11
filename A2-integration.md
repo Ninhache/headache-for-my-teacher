@@ -33,13 +33,13 @@ On pourrait, pour cet exercice, utiliser n'importe quel serveur http (apache, to
 
 	<img src="images/readme/screen-00.png" />
 
-	> _**NB :** Si la page ne s'affiche pas correctement, vérifiez que vous avez bien lancé votre serveur Node avec npx dans **le bon dossier** (c'est à dire celui où se trouve le fichier `index.html`)._
+	> _**NB :** Si la page ne s'affiche pas correctement, vérifiez que vous avez bien lancé votre serveur Node avec npx dans **le bon dossier** (c'est-à-dire celui où se trouve le fichier `index.html`)._
 
 ## A2.2. Inclure le JS dans la page
 
 **Ce repo est fourni avec un fichier `src/main.js` qu'il va falloir intégrer dans la page html.**
 
-Ouvrez le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>P</kbd>, tapez ensuite simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
+Ouvrez-le d'abord dans VSCodium pour voir à quoi il ressemble à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>P</kbd>, tapez ensuite simplement son nom dans le panneau qui s'est ouvert puis utilisez les flèches directionnelles et la touche `Entrée` pour valider.
 
 **Incluez ensuite le fichier `src/main.js` dans le fichier `index.html`** à l'aide d'une balise `<script>`.
 

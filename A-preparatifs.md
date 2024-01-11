@@ -15,7 +15,7 @@
 Il contient notamment des fichiers html, css et des assets graphiques (images et vidéos) qui vous permettront de vous concentrer sur le JS sans trop vous soucier de l'apparence de ce que vous codez tout en ayant **quand même** quelque chose de présentable visuellement 😎
 
 La première étape est donc de récupérer (_via git_) les fichiers du TP.<br>
-_**Allons y !**_
+_**Allons-y !**_
 
 ## A.2. Récupération des fichiers
 
@@ -43,14 +43,14 @@ Pour récupérer les fichiers du TP et travailler dessus, vous allez faire un "f
 
 3. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :** dans le menu de gauche, cliquez sur `"Manage"` &gt; `"Members"` puis sur le bouton `"Invite members"` (_ou_ `"Gestion"` &gt; `"Membres"` : `"Inviter des membres"`_sur la version française de Gitlab_), et entrez `@tf` comme nom d'utilisateur, et donc `"reporter"` comme rôle.
 
-4. **Ouvrez un terminal** *(si vous êtes sous windows, utilisez **Git bash** installé automatiquement avec Git)*
+4. **Ouvrez un terminal** *(si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git)*
 
 5. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
 	git clone https://framagit.org/<votre-username>/tp1.git ~/tps-react/tp1
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** si vous avez utilisé votre **compte github ou gitlab.com** pour créer votre compte framagit, il faut que vous renseigniez un mot de passe dans votre compte framagit ([Edit Profile &gt; Password](https://framagit.org/-/profile/password/edit)) pour pouvoir cloner en http_
 
