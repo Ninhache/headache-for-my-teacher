@@ -123,7 +123,7 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 	<img src="images/readme/npm-run-dev.gif" />
 
 	> _**NB :** Si la compilation ne se lance pas, plusieurs raisons sont possibles :_
-	> - _soit Babel n'est pas correctement installé,_
+	> - _soit Vite n'est pas correctement installé,_
 	> - _soit la section "scripts" n'est pas correctement formatée (pensez qu'il s'agit d'un fichier JSON, par conséquent l'oubli d'une **virgule** entre chaque script ou au contraire l'ajout d'une virgule à la fin du dernier script, sont considérés comme des **erreurs** de syntaxe)._
 
 6. C'est déjà mieux, mais on peut faire encore plus simple en utilisant le script "start" ! **Changez le nom de votre script `"dev"` en `"start"`**. Maintenant plutôt que de devoir taper `npm run dev`, on va pouvoir omettre le mot "run" et taper simplement :
