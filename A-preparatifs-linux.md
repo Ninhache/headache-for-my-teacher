@@ -8,6 +8,7 @@
 Les machines des salles TP de l'IUT disposent déjà de Node mais dans une version trop ancienne pour être utilisée dans ce cours.
 
 Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, dans votre session : **on va pour cela utiliser [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm).**
+
 1. **Vérifiez si `nvm` n'est pas déjà installé** dans votre session (_si vous avez suivi les cours de JS de BUT2 normalement c'est le cas_):
 	```bash
 	nvm ls

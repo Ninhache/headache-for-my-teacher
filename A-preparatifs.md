@@ -33,7 +33,7 @@ Dans ce cas il vous faudra installer :
 	> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
 
 - **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
-	> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.3. VSCod[e/ium]](#a3-vscodeium)_) !_
+	> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.4. VSCod[e/ium]](#a4-vscodeium)_) !_
 
 
 ## A.2. À propos de ce repo
