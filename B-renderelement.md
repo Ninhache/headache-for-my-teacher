@@ -21,7 +21,7 @@ A chaque étape du TP vous allez perfectionner cette fonction pour la rendre cap
 
 ### B.1.1. Template strings
 
-Comme vu dans le cours (*procurez vous le support pdf !*), ES6 a introduit une nouvelle syntaxe pour les chaînes de caractère appelée [**"template strings"** (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+Comme vu dans le cours (*procurez-vous le support pdf !*), ES6 a introduit une nouvelle syntaxe pour les chaînes de caractère appelée [**"template strings"** (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
 
 Cette nouvelle syntaxe permet notamment :
 - de déclarer des chaînes de caractères **multi-lignes**
@@ -72,7 +72,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 
 ## B.2. La fonction renderElement
 1. **Effacez tout le contenu du fichier `src/main.js`**.
-2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la balise `<div class="container">`, juste au dessus de la `<div class="videoList">`, comme ceci :
+2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la balise `<div class="container">`, juste au-dessus de la `<div class="videoList">`, comme ceci :
 	```html
 	<div class="container">
 		<header></header> <!-- 👈 c'est cette balise qu'il faut ajouter -->
@@ -123,7 +123,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	```js
 	const img = renderElement( 'img' );
 	```
-	`renderElement` doit retourner `<img />` (_une balise "auto fermante", c'est à dire sans enfants_) et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
+	`renderElement` doit retourner `<img />` (_une balise "auto fermante", c'est-à-dire sans enfants_) et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
 
 	**Testez votre fonction en ajoutant dans le `main.js`** (_conservez le code de title, on en aura encore besoin_) :
 	```js
@@ -146,7 +146,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	```
 	> _**NB :** comme on modifie la signature de la fonction, la création de `title` n'est plus correcte (on passe seulement 2 paramètres à la fonction, le `children` se retrouve donc à la place du `attribute`). Pour régler le problème, vous avez le droit de modifier la création de `title` en passant `null` au paramètre `attribute`._
 
-	**Modifiez donc la fonction `renderElement()` pour prendre en compte ce nouveau paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est à dire que si le paramètre `attribute` a été fourni comme ceci :
+	**Modifiez donc la fonction `renderElement()` pour prendre en compte ce nouveau paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est-à-dire que si le paramètre `attribute` a été fourni comme ceci :
 
 	```js
 	const img = renderElement( 'img', {name:'src', value:'https://source.unsplash.com/wOHH-NUTvVc/600x340'} );
