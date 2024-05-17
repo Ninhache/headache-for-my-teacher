@@ -2,9 +2,9 @@
 
 # C. Serveur API REST <!-- omit in toc -->
 
-_**Durant les TPs nous aurons à connecter notre application React à une API REST fournie ici : https://framagit.org/formation/react/api-server**_
+_**Durant les TPs nous aurons à connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://framagit.org/formation/react/api-server**_
 
-Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (générée à la volée).
+Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (_générée à la volée_).
 
 1. **Commencez par cloner le serveur :**
 	```bash
@@ -16,7 +16,9 @@ Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API RES
 	npm i
 	```
 
-	> _**NB :** Si cette commande déclenche une erreur en rapport avec node-gyp et que vous êtes sur windows, installez les `windows-build-tools` en ouvrant un terminal **en mode ⚠ ADMINISTRATEUR ⚠ (IMPORTANT) ** et en lançant la commande :_
+	> _**NB :** Si cette commande déclenche une erreur en rapport avec node-gyp et que vous êtes sur Windows, c'est peut-être que vous avez oublié de cocher la case **"Automatically install the necessary tools. ..."** sur l'écran "Tools for native modules" lors de l'installation de Node.js (comme indiqué dans le premier TP). Si c'est le cas il vous faudra **désinstaller et réinstaller Node en prenant soin de cocher cette case**._
+	>
+	> _Si malgré ça l'erreur persiste, alors vous pouvez tenter d'installer les `windows-build-tools` en ouvrant un terminal **en mode ⚠ ADMINISTRATEUR ⚠ (IMPORTANT)** et en lançant la commande :_
 	> ```bash
 	> npm install --global --production --verbose windows-build-tools
 	> ```
@@ -38,7 +40,7 @@ Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API RES
 
 5. **Enfin, assurez-vous du bon fonctionnement de l'API REST en ouvrant l'URL http://localhost:8080/api/videos dans votre navigateur.** Si tout se passe bien vous devez voir un JSON s'afficher avec des vidéos dedans !
 
-	<a href="images/screen/screen-01.png"><img src="images/readme/screen-01.png" ></a>
+	<img src="images/readme/screen-01.png" />
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à la dernière étape : [D. Les devtools](D-devtools.md)
