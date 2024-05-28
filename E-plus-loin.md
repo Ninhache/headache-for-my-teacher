@@ -17,7 +17,7 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 Pour commencer, **créez une nouvelle fonction `renderImg`** (_dans un module `src/renderImg.js`_) qui utilise la fonction `renderElement` et qui s'utilisera comme ceci dans le `main.js` :
 
 ```js
-const img = renderImg('https://source.unsplash.com/wOHH-NUTvVc/600x340');
+const img = renderImg('https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340');
 document.querySelector( '.videoList' ).innerHTML = img;
 ```
 
@@ -49,7 +49,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 		'a',
 		{name:'href', value:'uploads/video1.mp4'},
 		[
-			renderImg('https://source.unsplash.com/L8KQIPCODV8/600x340'),
+			renderImg('https://unsplash.uidlt.fr/L8KQIPCODV8/600x340'),
 			'Le Top 10 des framework JS'
 		]
 	);
@@ -73,7 +73,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 	... le code HTML généré sera :
 	```html
 	<a href="uploads/video1.mp4">
-		<img src="https://source.unsplash.com/L8KQIPCODV8/600x340" />
+		<img src="https://unsplash.uidlt.fr/L8KQIPCODV8/600x340" />
 		<section class="infos">
 			<h4>Le Top 10 des framework JS</h4>
 			<p>Vous n'en croirez pas vos yeux</p>
