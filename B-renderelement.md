@@ -149,12 +149,12 @@ const newEpisode = makeEpisode('Benjen Stark');
 	**Modifiez donc la fonction `renderElement()` pour prendre en compte ce nouveau paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est-à-dire que si le paramètre `attribute` a été fourni comme ceci :
 
 	```js
-	const img = renderElement( 'img', {name:'src', value:'https://source.unsplash.com/wOHH-NUTvVc/600x340'} );
+	const img = renderElement( 'img', {name:'src', value:'https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340'} );
 	```
 
 	alors `img` doit contenir le code suivant :
 	```html
-	<img src="https://source.unsplash.com/wOHH-NUTvVc/600x340" />
+	<img src="https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340" />
 	```
 
 	Testez ce nouveau code, le rendu devra cette fois être :
