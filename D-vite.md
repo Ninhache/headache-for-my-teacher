@@ -11,9 +11,9 @@ Il existe plusieurs outils pour faire ce genre d'opérations, nous utiliserons i
 ## Sommaire <!-- omit in toc -->
 - [D.1. Présentation](#d1-présentation)
 - [D.2. Installation](#d2-installation)
-- [D.2. Lancer le serveur de développement](#d2-lancer-le-serveur-de-développement)
-- [D.3. Le fichier `package.json`](#d3-le-fichier-packagejson)
-- [D.4. Créer un script de build personnalisé](#d4-créer-un-script-de-build-personnalisé)
+- [D.3. Lancer le serveur de développement](#d3-lancer-le-serveur-de-développement)
+- [D.4. Le fichier `package.json`](#d4-le-fichier-packagejson)
+- [D.5. Créer un script de build personnalisé](#d5-créer-un-script-de-build-personnalisé)
 
 
 ## D.1. Présentation
@@ -49,7 +49,7 @@ _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourn
 	Vous pourrez aussi remarquer qu'un dossier `/node_modules` a également été créé. C'est lui qui contient le code de toutes les dépendances du projet (toutes les librairies js qu'on installe avec npm).
 
 
-## D.2. Lancer le serveur de développement
+## D.3. Lancer le serveur de développement
 1. **Vous pouvez maintenant lancer le serveur de développement de Vite à l'aide de la commande** :
 	```bash
 	./node_modules/.bin/vite --port 8000
@@ -65,7 +65,7 @@ _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourn
 
 	> _**NB :** ce serveur est utile uniquement pendant la phase de développement, pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le JS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vitejs.dev/guide/build.html_
 
-## D.3. Le fichier `package.json`
+## D.4. Le fichier `package.json`
 
 **Avec la commande `npm init` nous avons créé un fichier `package.json` dans le projet.**
 
@@ -83,7 +83,7 @@ Ce fichier sert à plusieurs choses et notamment :
 
 2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est cette dernière possibilité que l'on va maintenant exploiter pour nous simplifier la vie dans la suite du TP.
 
-## D.4. Créer un script de build personnalisé
+## D.5. Créer un script de build personnalisé
 Tout à l'heure, pour lancer le serveur de Vite, on a exécuté la commande suivante :
 
 ```bash
