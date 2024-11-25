@@ -23,7 +23,7 @@ Suivez donc [ce tuto spécifique aux machines des salles TP de l'IUT](A-preparat
 ### Si vous utilisez votre propre machine <!-- omit in toc -->
 Dans ce cas il vous faudra installer :
 - **Git** : https://git-scm.com/
-- **Node.js** (_version "Current" **21.x**_): https://nodejs.org/en/download/current/
+- **Node.js** (_version "Current" **22.x**_): https://nodejs.org/en/download/prebuilt-installer/current
 	> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
 	> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous Windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
