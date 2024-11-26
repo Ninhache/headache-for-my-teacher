@@ -14,9 +14,7 @@
 **Avant de démarrer le TP il va vous falloir faire quelques installs et configurations.** Selon que vous utilisez une machine de l'Université ou votre propre ordinateur la situation n'est pas la même :
 
 ### Si vous êtes sur une machine des salles TP de l'IUT <!-- omit in toc -->
-Dans ce cas, un certain nombre de logiciels sont déjà pré-installés (notamment Git et VSCode) mais vous aurez quand même besoin :
-- de configurer le **proxy** de l'Université
-- d'installer une version de **NodeJS** plus récente que celle fournie sur les machines
+Dans ce cas, un certain nombre de logiciels sont déjà pré-installés (notamment Git et VSCode) mais vous aurez quand même besoin d'installer une version de **NodeJS** plus récente que celle fournie de base sur les machines.
 
 Suivez donc [ce tuto spécifique aux machines des salles TP de l'IUT](A-preparatifs-linux.md) puis revenez suivre la suite du TP ici.
 
@@ -56,10 +54,10 @@ _**Allons-y !**_
 	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** (`namespace`) \
 	et vérifiez que le repo est **bien en mode "private"** (`Visibility Level`)
 
-2. **Ajoutez votre encadrant de TP en tant que "reporter" pour qu'il ait accès à votre code :**
+2. **Ajoutez votre encadrant.e de TP en tant que "reporter" pour qu'il/elle ait accès à votre code :**
 	- dans le menu de gauche, cliquez sur **`Manage`** &gt; **`Members`** (`Gestion` &gt; `Membres` _si vous êtes sur la VF de gitlab_)
 	- cliquez sur le bouton en haut à droite **`"Invite members"`** (`Inviter des membres`)
-	- entrez comme **nom d'utilisateur** celui de votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`)
+	- entrez comme **nom d'utilisateur** celui de votre encadrant.e de TP (`@gery.casiez` ou `@thomas.fritsch`)
 	- ... et `"reporter"` comme **rôle**.
 
 3. **Ouvrez un terminal** *(si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git)*
@@ -69,7 +67,7 @@ _**Allons-y !**_
 	mkdir ~/tps-react
 	git clone https://gitlab.univ-lille.fr/<votre-username>/tp1.git ~/tps-react/tp1
 	```
-	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-js/tp1`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** si ce n'est pas déjà fait, il faut que vous renseigniez un mot de passe dans votre compte gitlab ([`Preferences` > `Password`](https://gitlab.univ-lille.fr/-/profile/password/edit)) pour pouvoir cloner en http_
 
@@ -90,11 +88,11 @@ Malheureusement des questions de licence liées à Microsoft [plus ou moins obsc
 
 1. **Ouvrez le panneau des extensions de VSCod\[e/ium\]** à l'aide du raccourci <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>X</kbd>
 
-1. **Installez l'extension `Prettier - Code formatter`** (_esbenp.prettier-vscode_)
+2. **Installez l'extension `Prettier - Code formatter`** (_esbenp.prettier-vscode_)
 
 	Prettier permet de formater automatiquement notre code en respectant de base un certain nombre de bonnes pratiques. Les possibilités de configuration sont volontairement limitées mais suffisantes pour avoir quand même l'impression d'avoir encore un peu la main sur son formatage 😄
 
-	On configurera cette extension dans le prochain TP.
+	On configurera cette extension dans les prochains TP.
 
 ## A.5. Ouvrir le projet dans VSCodium
 
