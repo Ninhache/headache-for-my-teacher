@@ -1,6 +1,6 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
+## 🎯 Objectifs
 - Maîtriser les principales syntaxes ES6+
 - Répartir son code dans plusieurs fichiers grâce aux modules
 - Être capable de compiler son code avec Vite
