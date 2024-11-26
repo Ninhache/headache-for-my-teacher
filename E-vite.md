@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# D. Vite <!-- omit in toc -->
+# E. Vite <!-- omit in toc -->
 
 _**Jusque là on ne s'est pas préoccupé de la compatibilité navigateur du code que l'on a tapé, que ce soit pour les syntaxes ES6 employées ou pour les modules.**_
 
@@ -9,14 +9,14 @@ En revanche dans la vraie vie, si l'on veut que tous les internautes puissent ut
 Il existe plusieurs outils pour faire ce genre d'opérations, nous utiliserons ici l'un des plus populaires : [Vite](https://vitejs.dev/).
 
 ## Sommaire <!-- omit in toc -->
-- [D.1. Présentation](#d1-présentation)
-- [D.2. Installation](#d2-installation)
-- [D.3. Lancer le serveur de développement](#d3-lancer-le-serveur-de-développement)
-- [D.4. Le fichier `package.json`](#d4-le-fichier-packagejson)
-- [D.5. Créer un script de build personnalisé](#d5-créer-un-script-de-build-personnalisé)
+- [E.1. Présentation](#e1-présentation)
+- [E.2. Installation](#e2-installation)
+- [E.3. Lancer le serveur de développement](#e3-lancer-le-serveur-de-développement)
+- [E.4. Le fichier `package.json`](#e4-le-fichier-packagejson)
+- [E.5. Créer un script de build personnalisé](#e5-créer-un-script-de-build-personnalisé)
 
 
-## D.1. Présentation
+## E.1. Présentation
 
 <img src="images/readme/header-vite.png" />
 
@@ -29,7 +29,7 @@ L'avantage d'utiliser Vite est donc que l'on a, avec un seul package, un environ
 
 Par ailleurs, Vite va, comme son nom l'indique... vite ! Il est en effet beaucoup [plus rapide que la solution webpack+babel](https://storybook.js.org/blog/storybook-performance-from-webpack-to-vite/) par exemple.
 
-## D.2. Installation
+## E.2. Installation
 
 _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourni avec Node et qui permet de télécharger des utilitaires JS).**_
 
@@ -49,7 +49,7 @@ _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourn
 	Vous pourrez aussi remarquer qu'un dossier `/node_modules` a également été créé. C'est lui qui contient le code de toutes les dépendances du projet (toutes les librairies js qu'on installe avec npm).
 
 
-## D.3. Lancer le serveur de développement
+## E.3. Lancer le serveur de développement
 1. **Vous pouvez maintenant lancer le serveur de développement de Vite à l'aide de la commande** :
 	```bash
 	./node_modules/.bin/vite --port 8000
@@ -65,7 +65,7 @@ _**L'installation de Vite se fait avec npm (Node Package Manager - l'outil fourn
 
 	> _**NB :** ce serveur est utile uniquement pendant la phase de développement, pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le JS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vitejs.dev/guide/build.html_
 
-## D.4. Le fichier `package.json`
+## E.4. Le fichier `package.json`
 
 **Avec la commande `npm init` nous avons créé un fichier `package.json` dans le projet.**
 
@@ -83,7 +83,7 @@ Ce fichier sert à plusieurs choses et notamment :
 
 2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est cette dernière possibilité que l'on va maintenant exploiter pour nous simplifier la vie dans la suite du TP.
 
-## D.5. Créer un script de build personnalisé
+## E.5. Créer un script de build personnalisé
 Tout à l'heure, pour lancer le serveur de Vite, on a exécuté la commande suivante :
 
 ```bash
@@ -136,4 +136,4 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 	<img src="images/readme/npm-start.gif" />
 
 ## Étape suivante <!-- omit in toc -->
-Bref, maintenant que nos outils de dev sont en place, on est parés pour les prochains TP, mais s'il vous reste du temps, vous pouvez vous attaquer à la dernière partie avec quelques exercices pour améliorer notre fonction `renderElement` : [E. Pour aller plus loin](./E-plus-loin.md)
+Bref, maintenant que nos outils de dev sont en place, on est parés pour les prochains TP, mais s'il vous reste du temps, vous pouvez vous attaquer à la dernière partie avec quelques exercices pour améliorer notre fonction `renderElement` : [F. Pour aller plus loin](./F-plus-loin.md)

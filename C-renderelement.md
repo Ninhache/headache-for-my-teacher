@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. La fonction renderElement <!-- omit in toc -->
+# C. La fonction renderElement <!-- omit in toc -->
 
 _**Nous allons développer dans ce TP une fonction nommée `renderElement` qui va permettre de générer du code HTML en JS.**_
 
@@ -12,14 +12,14 @@ A chaque étape du TP vous allez perfectionner cette fonction pour la rendre cap
 > _Mais pour le moment on va simplifier la mise en place en remettant ça à plus tard (ne faites pas ça dans la vraie vie !)._
 
 ## Sommaire <!-- omit in toc -->
-- [B.1. Rappels de syntaxe](#b1-rappels-de-syntaxe)
-	- [B.1.1. Template strings](#b11-template-strings)
-	- [B.1.2. Fonctions](#b12-fonctions)
-- [B.2. La fonction renderElement](#b2-la-fonction-renderelement)
+- [C.1. Rappels de syntaxe](#c1-rappels-de-syntaxe)
+	- [C.1.1. Template strings](#c11-template-strings)
+	- [C.1.2. Fonctions](#c12-fonctions)
+- [C.2. La fonction renderElement](#c2-la-fonction-renderelement)
 
-## B.1. Rappels de syntaxe
+## C.1. Rappels de syntaxe
 
-### B.1.1. Template strings
+### C.1.1. Template strings
 
 Comme vu dans le cours (*procurez-vous le support pdf !*), ES6 a introduit une nouvelle syntaxe pour les chaînes de caractère appelée [**"template strings"** (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
 
@@ -32,7 +32,7 @@ Cette nouvelle syntaxe permet notamment :
 	console.log(`Better call ${lawyer} is ${critic} than Breaking Bad`);
 	```
 
-### B.1.2. Fonctions
+### C.1.2. Fonctions
 
 ES6 a également introduit une nouvelle syntaxe pour l'écriture des fonctions : les **["arrow functions" (_ou "fonctions fléchées" en français_)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions)**.
 
@@ -70,7 +70,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 >	```
 > _A nouveau, aucun changement sur la façon d'appeler la fonction. C'est totalement transparent lors de l'appel : `const newEpisode = makeEpisode('Benjen Stark');`_
 
-## B.2. La fonction renderElement
+## C.2. La fonction renderElement
 1. **Effacez tout le contenu du fichier `src/main.js`**.
 2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la balise `<div class="container">`, juste au-dessus de la `<div class="videoList">`, comme ceci :
 	```html
@@ -162,4 +162,4 @@ const newEpisode = makeEpisode('Benjen Stark');
 	<img src="images/readme/screen-02.png">
 
 ## Étape suivante <!-- omit in toc -->
-Maintenant que notre fonction `renderElement` est bien avancée, il est l'heure de répartir notre code dans différents fichiers à l'aide des modules ! RDV donc dans la partie suivante : [C. Modules](./C-modules.md)
+Maintenant que notre fonction `renderElement` est bien avancée, il est l'heure de répartir notre code dans différents fichiers à l'aide des modules ! RDV donc dans la partie suivante : [D. Modules](./D-modules.md)

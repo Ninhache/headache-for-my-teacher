@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# E. Pour aller plus loin <!-- omit in toc -->
+# F. Pour aller plus loin <!-- omit in toc -->
 
 _**Si vous êtes arrivé à cette partie du TP bravo ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
 
@@ -9,11 +9,11 @@ Cette partie bonus du TP va vous permettre de perfectionner encore votre maîtri
 **C'est parti !**
 
 ## Sommaire <!-- omit in toc -->
-- [E.1. La fonction renderImg](#e1-la-fonction-renderimg)
-- [E.2. La fonction renderVideoItem](#e2-la-fonction-rendervideoitem)
-- [E.3. la fonction renderVideoList](#e3-la-fonction-rendervideolist)
+- [F.1. La fonction renderImg](#f1-la-fonction-renderimg)
+- [F.2. La fonction renderVideoItem](#f2-la-fonction-rendervideoitem)
+- [F.3. la fonction renderVideoList](#f3-la-fonction-rendervideolist)
 
-## E.1. La fonction renderImg
+## F.1. La fonction renderImg
 Pour commencer, **créez une nouvelle fonction `renderImg`** (_dans un module `src/renderImg.js`_) qui utilise la fonction `renderElement` et qui s'utilisera comme ceci dans le `main.js` :
 
 ```js
@@ -25,7 +25,7 @@ Le rendu ne doit pas avoir changé :
 
 <img src="images/readme/screen-02.png" >
 
-## E.2. La fonction renderVideoItem
+## F.2. La fonction renderVideoItem
 
 _**L'objectif de cet exercice est comme précédemment d'utiliser une fonction à l'intérieur d'une autre. On va se servir de la fonction `renderImg()` développée à l'instant, à l'intérieur d'une nouvelle fonction : `renderVideoItem()`.**_
 
@@ -84,7 +84,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 	<img src="images/readme/screen-04.png" >
 
-## E.3. la fonction renderVideoList
+## F.3. la fonction renderVideoList
 
 _**Après cette petite fonction `renderVideoItem`, attaquons-nous à un cas un peu plus complexe : celui de la fonction `renderVideoList`.**_
 
