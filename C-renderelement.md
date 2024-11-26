@@ -6,10 +6,10 @@ _**Nous allons développer dans ce TP une fonction nommée `renderElement` qui v
 
 A chaque étape du TP vous allez perfectionner cette fonction pour la rendre capable de gérer des paramètres supplémentaires.
 
-> _**NB :** Dans ce TP vous coderez dans un premier temps directement dans le fichier `src/main.js` **sans compiler** votre code et **sans passer par des fichiers (modules) séparés**._
+> _**NB :** Dans ce TP vous coderez dans un premier temps tout dans le fichier `src/main.ts` **sans passer par des fichiers (modules) séparés**._
 >
-> _Dans la suite du TP on compilera notre code pour le rendre compatible avec tous les navigateurs, et on organisera notre code plus proprement en séparant les classes dans des modules différents._ \
-> _Mais pour le moment on va simplifier la mise en place en remettant ça à plus tard (ne faites pas ça dans la vraie vie !)._
+> _Dans la suite du TP on organisera notre code plus proprement en le répartissant dans des modules différents._ \
+> _Mais pour le moment on va simplifier les choses en remettant ça à plus tard (ne faites pas ça dans la vraie vie !)._
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. Rappels de syntaxe](#c1-rappels-de-syntaxe)
@@ -21,7 +21,7 @@ A chaque étape du TP vous allez perfectionner cette fonction pour la rendre cap
 
 ### C.1.1. Template strings
 
-Comme vu dans le cours (*procurez-vous le support pdf !*), ES6 a introduit une nouvelle syntaxe pour les chaînes de caractère appelée [**"template strings"** (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+Comme vu dans le cours (*procurez-vous le support pdf !*), ES6 a introduit une nouvelle syntaxe pour les chaînes de caractères appelée [**"template strings"** (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
 
 Cette nouvelle syntaxe permet notamment :
 - de déclarer des chaînes de caractères **multi-lignes**
@@ -36,54 +36,49 @@ Cette nouvelle syntaxe permet notamment :
 
 ES6 a également introduit une nouvelle syntaxe pour l'écriture des fonctions : les **["arrow functions" (_ou "fonctions fléchées" en français_)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions)**.
 
-On a donc désormais 3 façons différentes d'écrire des fonctions en JS :
+On a donc 3 façons différentes d'écrire des fonctions en JS/TS :
 
 ```js
-function makeEpisode(hero) { // fonction nommée
+function makeEpisode(hero:string) { // fonction nommée
 	return `${hero} is dead !`;
 }
 // ou
-const makeEpisode = function(hero) { //fonction anonyme
+const makeEpisode = function(hero:string) { // fonction anonyme
 	return `${hero} is dead !`;
 }
 // ou
-const makeEpisode = (hero) => { // arrow function ("lambda")
+const makeEpisode = (hero:string) => { // arrow function ("lambda")
 	return `${hero} is dead !`;
 }
 ```
 
-Ces 3 déclarations ont exactement le même effet : elles créent en mémoire une constante qui a le nom `"makeEpisode"` et qui contient une valeur de type [`Function` (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). \
+> <details><summary>ℹ️ On avait pas dit qu'on pouvait simplifier encore plus l'écriture des arrow functions ?</summary>
+>
+> _Si si, il y a 2 situations où on peut alléger l'écriture des arrow functions :_
+> - _si le corps de la fonction ne contient qu'un return, on peut alors retirer les accolades et le mot clé return :_
+> 	```js
+> 	const makeEpisode = (hero) => `${hero} is dead !`;
+> 	```
+> - _si la fonction ne prend qu'un seul paramètre, on peut retirer les parenthèses autour du paramètre :_
+>  	```js
+>  	const makeEpisode = hero => `${hero} is dead !`;
+> 	```
+> </details>
+
+Ces 3 déclarations ont exactement le même effet : elles créent en mémoire une référence qui a le nom `"makeEpisode"` et qui contient une valeur de type [`Function` (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). \
 Elles s'appellent donc toutes les 3 de la même manière :
 
 ```js
 const newEpisode = makeEpisode('Benjen Stark');
 ```
 
-> _**NB :** A propos des arrow functions, notez qu'il est dans certains cas possible de simplifier l'écriture :_
-> - _si le corps de la fonction ne contient qu'un return, on peut retirer les accolades et le mot clé return :_
-> 	```js
-> 	const makeEpisode = (hero) => `${hero} is dead !`;
->	```
-> - _si la fonction ne prend qu'un seul paramètre, on peut retirer les parenthèses autour :_
-> 	```js
-> 	const makeEpisode = hero => `${hero} is dead !`;
->	```
-> _A nouveau, aucun changement sur la façon d'appeler la fonction. C'est totalement transparent lors de l'appel : `const newEpisode = makeEpisode('Benjen Stark');`_
-
 ## C.2. La fonction renderElement
-1. **Effacez tout le contenu du fichier `src/main.js`**.
-2. **Ajoutez dans le fichier `index.html` une balise `<header>`** à l'intérieur de la balise `<div class="container">`, juste au-dessus de la `<div class="videoList">`, comme ceci :
-	```html
-	<div class="container">
-		<header></header> <!-- 👈 c'est cette balise qu'il faut ajouter -->
-		<div class="videoList">
-		</div>
-	</div>
-	```
-3. **Dans le fichier `src/main.js` créez une fonction `renderElement` qui s'utilise de la manière suivante :**
-	```js
+1. **Effacez tout le contenu du fichier `src/main.ts`**.
+
+2. **Dans le fichier `src/main.ts` créez une fonction `renderElement` qui s'utilise de la manière suivante :**
+	```ts
 	const title = renderElement( 'h1' );
-	document.querySelector('.container > header').innerHTML = title;
+	document.querySelector('.container > header')!.innerHTML = title;
 	```
 	+ la fonction **prend en paramètre une chaîne nommée `tagName`**
 	+ elle **retourne une chaîne de caractères au format html**, qui représente une balise dont le type dépend du paramètre `tagName`.
@@ -96,7 +91,47 @@ const newEpisode = makeEpisode('Benjen Stark');
 		```js
 		'<h1></h1>'
 		```
-		> _**NB :** Je vous conseille d'utiliser les **template strings** dans cette fonction, cela vous permettra facilement d'injecter des valeurs dans votre chaîne et en plus de passer des lignes dans la chaîne de caractères pour rendre votre code plus lisible._
+	> <details><summary>💡 <strong>pro tip :</strong> pour cette exercice utilisez les template strings...</summary>
+	>
+	> _Cela vous permettra d'injecter facilement des valeurs dans votre chaîne et en plus de passer à la ligne dans la chaîne de caractères pour rendre votre code plus lisible._
+	> </details>
+
+	<br/>
+
+	> <details><summary>ℹ️ Ça fait quoi la ligne "document.querySelector(...)..." ?</summary>
+	>
+	> _Cette instruction permet d'injecter dans la page HTML la chaîne de caractères contenue dans `title`._
+	>
+	> _`document.querySelector('.container > header')` ([mdn](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector)) permet de récupérer une référence vers la balise `<header>` contenue dans la balise de classe CSS `"container"`._ \
+	> _Si vous regardez dans le fichier `index.html` vous allez y trouver en effet une balise `<div class="container">`, qui contient elle-même une sous-balise `<header>` (juste au dessus de `<div class="videoList">`) :_
+	> ```html
+	> <div class="container">
+	> 	<header></header> <!-- 👈 c'est cette balise qu'on cible -->
+	> 	<div class="videoList">
+	> 	</div>
+	> </div>
+	> ```
+	>
+	> _La propriété [`innerHTML` (mdn)](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) permet d'écrire dans la balise la valeur passée après le `=` (ici la chaîne contenue dans `title`)._
+	> </details>
+
+	> <details><summary>ℹ️ C'est quoi cet opérateur "!." devant "innerHTML" ?</summary>
+	>
+	> _Il s'agit d'un opérateur qui n'existe qu'en TypeScript : le ["Non Null Assertion Operator" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-)._
+	>
+	> _Il permet de dire à TypeScript qu'on est **certains que la valeur qui se trouve à gauche n'est pas nulle**._
+	>
+	> _C'est important parce que sinon TypeScript râle (à juste titre) sur le fait que ce que retourne `querySelector(...)` peut être `null` (par exemple si il ne trouve pas la balise dans la page HTML) et qu'on ne peut pas appeler une propriété (`.innerHTML`) sur quelque chose de `null`._ \
+	> _Dans notre situation on est quasi certains que cette balise existera toujours, on peut donc "forcer la main" à TS pour lui dire de considérer que cette valeur ne sera jamais nulle._
+	>
+	> _Dans la vraie vie on aurait sans doute plutôt rajouté un test pour vérifier que la valeur retournée par `querySelector` n'est pas nulle avant de manipuler le DOM :_
+	> ```ts
+	> const headerElement = document.querySelector('.container > header');
+	> if (headerElement) {
+	>      headerElement.innerHTML = title;
+	> }
+	> ```
+	> </details>
 
 	**Vérifiez que votre fonction "fonctionne" correctement en inspectant le code généré par votre application avec l'Inspecteur d'éléments des devtools du navigateur.**
 
@@ -105,10 +140,10 @@ const newEpisode = makeEpisode('Benjen Stark');
 	<img src="images/readme/screen-01-h1.png"/>
 
 
-4. **Ajoutez un second paramètre à la fonction `renderElement`, nommé `children`.** Modifiez le code de la fonction de manière à ce que le code suivant :
-    ```js
+3. **Ajoutez un second paramètre à la fonction `renderElement`, nommé `children`** (_string également_). Modifiez le code de la fonction de manière à ce que le code suivant :
+    ```ts
 	const title = renderElement( 'h1', 'Recommandations' );
-	document.querySelector('.container > header').innerHTML = title;
+	document.querySelector('.container > header')!.innerHTML = title;
 	```
 	Injecte dans la page le code suivant :
 	```js
@@ -119,32 +154,39 @@ const newEpisode = makeEpisode('Benjen Stark');
 
 	<img src="images/readme/screen-01.png" >
 
-5. **Modifiez le fonctionnement de la fonction pour prendre en compte le cas où `children` est vide** (`null` ou `undefined`). Par exemple si j'appelle `renderElement` comme ceci :
+4. **Modifiez le fonctionnement de la fonction pour prendre en compte le cas où `children` est vide** (`null` ou `undefined`). Par exemple si j'appelle `renderElement` comme ceci :
 	```js
 	const img = renderElement( 'img' );
 	```
-	`renderElement` doit retourner `<img />` (_une balise "auto fermante", c'est-à-dire sans enfants_) et pas `<img></img>` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
+	`renderElement` doit retourner la chaîne `'<img />'` (_une balise "auto fermante", c'est-à-dire sans enfants_) et pas `'<img></img>'` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
 
-	**Testez votre fonction en ajoutant dans le `main.js`** (_conservez le code de title, on en aura encore besoin_) :
+	> <details><summary>ℹ️ Comment on fait pour dire à TypeScript qu'un paramètre de fonction est facultatif ?</summary>
+	>
+	> _La réponse dans la documentation : https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters_ 🙂
+	> </details>
+
+	**Testez votre fonction en ajoutant dans le `main.ts`** le code suivant (_conservez le code de title, on en aura encore besoin_) :
 	```js
 	const img = renderElement( 'img' );
-	document.querySelector( '.videoList' ).innerHTML = img;
+	document.querySelector( '.videoList' )!.innerHTML = img;
 	```
 	Vérifiez dans **l'inspecteur d'éléments** que votre image est bien ajoutée dans `videoList` :
 
 	> _**NB :** Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
 
-	> _**NB2 :** Selon votre navigateur il est possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img)`, là vous saurez avec certitude si votre méthode retourne bien `<img />`._
+	> <details><summary>ℹ️ Les devtools affichent toujours "&lt;img&gt;" et pas "&lt;img /&gt;" ☹️</summary>
+	>
+	> _Selon votre navigateur il est en effet possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img)`, là vous saurez avec certitude si votre méthode retourne bien `<img />`._
+	> </details>
 
 	<img src="images/readme/screen-02-inspecteur.png">
 
-6. **Ajoutez un paramètre `attribute` en 2e position de la fonction `renderElement` :**
+5. **Ajoutez un nouveau paramètre `attribute` en 2e position de la fonction `renderElement` :**
 
 	La signature de la fonction sera désormais :
 	```js
 	renderElement( tagName, attribute, children ) {
 	```
-	> _**NB :** comme on modifie la signature de la fonction, la création de `title` n'est plus correcte (on passe seulement 2 paramètres à la fonction, le `children` se retrouve donc à la place du `attribute`). Pour régler le problème, vous avez le droit de modifier la création de `title` en passant `null` au paramètre `attribute`._
 
 	**Modifiez donc la fonction `renderElement()` pour prendre en compte ce nouveau paramètre `attribute`**. On considère que ce paramètre aura toujours la forme d'un objet littéral avec deux propriétés : `name` et `value`. C'est-à-dire que si le paramètre `attribute` a été fourni comme ceci :
 
@@ -152,10 +194,41 @@ const newEpisode = makeEpisode('Benjen Stark');
 	const img = renderElement( 'img', {name:'src', value:'https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340'} );
 	```
 
-	alors `img` doit contenir le code suivant :
+	alors `img` doit contenir la chaîne suivante :
 	```html
 	<img src="https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340" />
 	```
+
+	> <details><summary>ℹ️ Comment typer des objets littéraux ?</summary>
+	>
+	> _Ça se fait en utilisant une notation sous accolades et en typant chaque propriété de l'objet : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types_
+	>
+	> _**Par exemple**, si on a une variable qui doit contenir un objet littéral avec 2 propriétés `prenom` (chaîne) et `age` (nombre) on pourra la définir comme ceci :_
+	> ```ts
+	> let personnage: { prenom: string, age: number };
+	> ```
+	>
+	> _On peut aussi définir des [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) pour séparer la définition du type de l'endroit où on l'utilise :_
+	> ```ts
+	> type Humain = {
+	>     prenom: string,
+	>     age: number,
+	> };
+	> let personnage: Humain;
+	> ```
+	> </details>
+
+	> <details><summary>ℹ️ Quand je modifie l'ordre des paramètres, la création de title plante 😭 </summary>
+	>
+	> _Oui c'est normal, pour title on passait jusque là seulement 2 paramètres à la fonction `renderElement`, le `children` se retrouve donc à la place du `attribute`._
+	>
+	> _Pour régler le problème, vous avez le droit de modifier la création de `title` en passant `null` au paramètre `attribute` :_
+	> ```ts
+	> const title = renderElement( 'h1', null, 'Recommandations' );
+	> ```
+	>
+	> _Attention à bien prendre ça en compte dans le typage, par exemple en utilisant les [Unions de types (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)_
+	> </details>
 
 	Testez ce nouveau code, le rendu devra cette fois être :
 

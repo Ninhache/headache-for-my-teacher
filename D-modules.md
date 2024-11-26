@@ -4,7 +4,7 @@
 
 _**Notre application Reactube a bien progressé.**_
 
-Malheureusement tout notre code réside dans le seul fichier `main.js` : **ça commence par conséquent à être un peu le "bazar" puisque tout est mélangé.**
+Malheureusement tout notre code réside dans le seul fichier `main.ts` : **ça commence par conséquent à être un peu le "bazar" puisque tout est mélangé.**
 
 **L'objectif de ce chapitre va être de nous permettre de mieux organiser notre code en le répartissant dans plusieurs fichiers grâce aux modules ES6.**
 
@@ -59,29 +59,31 @@ Dans un premier temps nous ferons de toute façon abstraction de ces questions d
 Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec les vieux navigateurs grâce à un bundler.
 
 ## D.2. Mise en oeuvre
-1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
+1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `build/main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
 	```html
-	<script type="module" src="src/main.js"></script>
+	<script src="build/main.js" type="module"></script>
 	```
 	> _**NB :** Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
 
-3. Si pour les modules avec un bundler (_comme Vite par exemple, cf. suite du TP_) on peut omettre l'extension du fichier qu'on importe, ce n'est pas le cas avec les modules "dans le navigateur" comme on s'apprête à le faire : il faut **obligatoirement préciser à chaque `import ... from ...` l'extension `.js` après le nom du fichier**.
+3. Si pour les modules avec un bundler (_comme Vite par exemple, cf. suite du TP_) on peut omettre l'extension du fichier qu'on importe, ce n'est pas le cas avec les modules "dans le navigateur" comme on s'apprête à le faire : il faut **obligatoirement préciser à chaque `import ... from ...` l'extension** (_`.ts` dans les fichiers sources, `.js` dans les fichiers compilés_) après le nom du fichier.
 
-	Pour que vscode vous aide à créer les instructions import correctement, **Ajoutez un dossier `.vscode` à la racine du TP**  (_à côté du fichier `index.html`_) **et placez y un fichier nommé `settings.json`** avec le contenu suivant :
+	Pour que vscode vous aide à créer les instructions import correctement côté TypeScript, **Ajoutez un dossier `.vscode` à la racine du TP**  (_à côté du fichier `index.html`_) **et placez y un fichier nommé `settings.json`** avec le contenu suivant :
 
 	```json
 	{
-		"[javascript]": {
-			"javascript.preferences.importModuleSpecifierEnding": "js"
-		}
+	    "[typescript]": {
+	        "typescript.preferences.importModuleSpecifierEnding": "js"
+	    }
 	}
 	```
 
-4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module ES6 distinct `src/renderElement.js`.**
+4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module distinct `src/renderElement.ts`.**
 
-	> _**NB1 :** Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
+	> _**NB :** Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
 
-	> _**NB2 :** Exporter **par défaut** une constante sur la même ligne que sa création est interdit (cf. la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)):_
+	> <details><summary>ℹ️ Exporter <strong>par défaut</strong> une constante sur la même ligne que sa création est interdit !!</summary>
+	>
+	> _Source la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)) :_
 	> ```js
 	> export default const data = [...]; // ERREUR !
 	> ```
@@ -91,18 +93,23 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default data; // OK !
 	> ```
 
-	> _**NB3 :** Un export nommé (pas par défaut) d'une const est en revanche autorisé :_
+	> <details><summary>ℹ️ ... par contre un export nommé (pas par défaut) d'une const est autorisé...</summary>
+	>
 	> ```js
 	> export const data = [...]; // OK !
 	> ```
+	> </details>
 
-	> _**NB4 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :_
+	> <details><summary>ℹ️ ... cette restriction ne s'applique pas aux fonctions et aux classes !</summary>
+	>
+	> _On peut tout à fait faire :_
 	> ```js
 	> export default class Component {...} // OK !
 	> ```
 	> ```js
 	> export default function checkValue(value){...} // OK aussi !
 	> ```
+	> </details>
 
 5. **Testez la page dans le navigateur**, le résultat doit être identique à celui obtenu précédemment :
 
@@ -112,7 +119,7 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 
 	<img src="images/readme/modules-network.png" />
 
-	On voit ainsi une des limites des modules ES6 : si l'on a plusieurs dizaines/centaines/milliers de modules dans un projet, on va déclencher en cascade autant de requêtes http que l'on a de modules dans le projet 😱
+	On entrevoit déjà un peu une des limites des modules ES6 : si l'on a plusieurs dizaines/centaines/milliers de modules dans un projet, on va déclencher en cascade autant de requêtes http que l'on a de modules dans le projet 😱
 
 	Heureusement il existe des outils appelés "bundlers", qui permettent de régler ce problème ! Comme la vie est bien faite, c'est justement ce qu'on va voir dans la prochaine partie de ce TP ! 😌
 
