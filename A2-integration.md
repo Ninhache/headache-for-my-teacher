@@ -91,4 +91,4 @@ Cette instruction `console.log()` permet d'afficher du texte ou des variables da
 **_Pour la suite du TP, tout le code se fera dans ce fichier `main.js`, le fichier html ne devra pas être modifié !_**
 
 ## Étape suivante <!-- omit in toc -->
-Voilà maintenant tout est prêt pour que vous puissiez commencer à coder ! Rendez-vous à l'étape suivante : [B. La fonction renderElement](B-renderelement.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Typescript](B-typescript.md)
