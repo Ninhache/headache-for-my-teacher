@@ -25,7 +25,8 @@ Dans ce cas il vous faudra installer :
 	> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
 	> <details><summary>⚠️ <strong>ATTENTION</strong> ⚠️ si vous êtes <strong>sous Windows </strong> vous devez OBLIGATOIREMENT ...</summary>
-	> _pendant le processus d'installation, **COCHER** la case _"Automatically install the necessary tools. ..." sur l'écran **"Tools for native modules"**_
+	>
+	> _pendant le processus d'installation, **COCHER** la case "Automatically install the necessary tools. ..." sur l'écran **"Tools for native modules"**_
 	>
 	> <img src="images/readme/node-install.png" >
 	>
