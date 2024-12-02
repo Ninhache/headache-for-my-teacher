@@ -21,14 +21,16 @@ Suivez donc [ce tuto spécifique aux machines des salles TP de l'IUT](A-preparat
 ### Si vous utilisez votre propre machine <!-- omit in toc -->
 Dans ce cas il vous faudra installer :
 - **Git** : https://git-scm.com/
-- **Node.js** (_version "Current" **22.x**_): https://nodejs.org/en/download/prebuilt-installer/current
+- **Node.js** (_version "Current" **23.x**_): https://nodejs.org/en/download/prebuilt-installer/current
 	> _**Attention :** si vous aviez déjà une version plus ancienne de Node (tapez `node -v` dans un terminal pour en avoir le coeur net) alors je vous conseille **VIVEMENT** de la désinstaller complètement avant d'installer la nouvelle version._
 
-	> ⚠️ _**ATTENTION AUSSI :**_ ⚠️ _si vous êtes sous Windows, pendant le processus d'installation, **COCHEZ** la case _"Automatically install the necessary tools. ..."_ sur l'écran **"Tools for native modules"**_
+	> <details><summary>⚠️ <strong>ATTENTION</strong> ⚠️ si vous êtes <strong>sous Windows </strong> vous devez OBLIGATOIREMENT ...</summary>
+	> _pendant le processus d'installation, **COCHER** la case _"Automatically install the necessary tools. ..." sur l'écran **"Tools for native modules"**_
 	>
 	> <img src="images/readme/node-install.png" >
 	>
 	> _Cette case permettra d'installer des dépendances utiles pour un futur TP (notamment python et les visual c++ build tools)._
+	> </details>
 
 - **VSCodium** https://vscodium.com ou **VSCode** https://code.visualstudio.com
 	> _**NB :** Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (_cf. [A.4. VSCod[e/ium]](#a4-vscodeium)_) !_

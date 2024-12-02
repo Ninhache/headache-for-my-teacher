@@ -16,15 +16,15 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	Si la commande fonctionne, alors vous pouvez passer à l'étape suivante.
 	Sinon, si elle retourne une erreur, c'est a priori que `nvm` n'est pas installé, donc **lancez l'install de `nvm`** :
 	```bash
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 	```
 	puis rechargez les variables d'environnement ajoutées par nvm :
 	```bash
 	source ~/.bashrc
 	```
-2. **Téléchargez et installez ensuite la version de Node que l'on souhaite** (_ici la 21_) grâce à nvm :
+2. **Téléchargez et installez ensuite la version de Node que l'on souhaite** (_ici la 23_) grâce à nvm :
 	```bash
-	nvm install 21
+	nvm install 23
 	```
 	> _**NB :** si la commande `nvm` n'est pas reconnue, tentez de fermer et relancer votre terminal. Si ça ne suffit pas, ajoutez les lignes suivantes à votre `.bashrc` :_
 	> ```bash
@@ -40,7 +40,7 @@ Vous allez donc avoir besoin d'installer Node vous même, sans droit d'admin, da
 	```bash
 	node -v
 	```
-	doit retourner `v21.5.0`
+	doit retourner `v23.3.0`
 
 
 ## Étape suivante <!-- omit in toc -->
