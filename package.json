@@ -1,0 +1,15 @@
+{
+  "name": "r6.tp1",
+  "version": "1.0.0",
+  "description": "<img src=\"images/readme/header.jpg\" />",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.0.2"
+  }
+}
