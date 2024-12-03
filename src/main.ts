@@ -1,14 +1,19 @@
-type StandardHtmlTags =
-  | "h1"
-  | "div"
-  | "span"
-  | "header"
-  | "main"
-  | "ul"
-  | "li"
-  | "p";
-type VoidHtmlTags = "img";
+const standardHtmlTags = [
+  "a",
+  "h1",
+  "div",
+  "span",
+  "header",
+  "main",
+  "ul",
+  "li",
+  "p",
+] as const;
 
+const voidHtmlTags = ["img"] as const;
+
+type StandardHtmlTags = (typeof standardHtmlTags)[number];
+type VoidHtmlTags = (typeof voidHtmlTags)[number];
 type HtmlTags = StandardHtmlTags | VoidHtmlTags;
 
 type GlobalAttributes = {
@@ -17,14 +22,18 @@ type GlobalAttributes = {
   style?: string;
 };
 
+type RequireKeys<T, K extends keyof T> = T & Required<Pick<T, K>>;
+
 type SpecificAttributes = {
-  // todo: improve "string" because it's not enough over-over-engiennier yet :p
-  img: { src: string; alt: string; width?: number; height?: number };
+  img: { src: string; alt: string } & (
+    | { width?: never; height?: never }
+    | RequireKeys<{ width: number; height: number }, "width" | "height">
+  );
+  a: { href: string };
 };
 
-type AttributesFor<T extends HtmlTags> = T extends keyof SpecificAttributes
-  ? GlobalAttributes & SpecificAttributes[T]
-  : GlobalAttributes;
+type AttributesFor<T extends HtmlTags> = GlobalAttributes &
+  (T extends keyof SpecificAttributes ? SpecificAttributes[T] : {});
 
 type AttributeString<T> = T extends Record<string, unknown>
   ? {
@@ -43,40 +52,29 @@ type HtmlElements<T extends HtmlTags> = T extends StandardHtmlTags
       : ` ${AttributeString<AttributesFor<T>>}`} />`;
 
 type HtmlContent<T extends HtmlTags> = T extends StandardHtmlTags
-  ? HtmlElements<HtmlTags> | Array<string | HtmlElements<HtmlTags>> | string // < I don't like the usage of raw string here but.. i'm a bit forced with that type structure
+  ? HtmlElements<HtmlTags> | Array<string | HtmlElements<HtmlTags>> | string
   : never;
 
 function renderElement<T extends HtmlTags>(
   tag: T,
   attributes: T extends keyof SpecificAttributes
-    ? Pick<AttributesFor<T>, keyof SpecificAttributes[T]> &
-        Partial<GlobalAttributes>
-    : Partial<AttributesFor<T>> | null,
+    ? SpecificAttributes[T] & GlobalAttributes
+    : Partial<AttributesFor<T>>,
   content?: HtmlContent<T>
 ): HtmlElements<T> {
   const attrString = Object.entries(attributes || {})
     .map(([key, value]) => `${key}="${value}"`)
     .join(" ");
-  if (content) {
+
+  if (content && standardHtmlTags.includes(tag as StandardHtmlTags)) {
     return `<${tag} ${attrString}>${content}</${tag}>` as HtmlElements<T>;
   }
   return `<${tag} ${attrString} />` as HtmlElements<T>;
 }
 
-const fullHtml = renderElement("div", { id: "app" }, [
-  renderElement("header", {}, [
-    renderElement("h1", { style: "color: blue" }, "Welcome to My App"),
-    renderElement("img", {
-      src: "https://picsum.photos/300",
-      alt: "A random image",
-    }),
-  ]),
-  renderElement("main", { class: "content" }, [
-    renderElement("p", null, "This is a paragraph with some text."),
-    renderElement("ul", null, [
-      renderElement("li", null, "First item"),
-      renderElement("li", null, "Second item"),
-    ]),
-  ]),
-]);
-document.querySelector(".container")!.innerHTML = fullHtml;
+function renderImg(src: string, alt: string = "") {
+  return renderElement("img", { src, alt });
+}
+
+const validImg = renderImg("https://picsum.photos/300");
+document.querySelector(".videoList")!.innerHTML = validImg;
